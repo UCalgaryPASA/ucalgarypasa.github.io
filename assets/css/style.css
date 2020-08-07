@@ -1,0 +1,144 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: url(../img/whitebackground.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: white;
+}
+
+.my-container {
+    margin: 0 !important;
+    max-width: 100% !important;
+    display: table !important;
+}
+
+.banner {
+    font-weight: 700;
+    color: white;
+}
+
+#construction {
+    /* background-color: yellow; */
+    background: repeating-linear-gradient(
+    315deg,
+  #e2c101,
+  #e2c101 10px,
+  #000000 10px,
+  #000000 20px
+);  
+}
+
+#covid {
+    background-color: black;
+    cursor: pointer;
+}
+
+#thisspan {
+    text-align: right;
+    border-right: 0.5rem solid rgba(255, 255, 255, 0);  
+}
+
+#brandcol span {
+    padding-right: 5%;
+}
+
+#brand {
+    margin: 1% 0 0 0;
+    float: right;
+}
+
+#brand {
+    font-size: 0.70rem;
+}
+
+.logo {
+    max-height: 3rem;
+    max-width: 3rem;
+}
+
+@media screen and (min-width: 394px) {
+    #brand {
+        font-size: 1rem;
+    }
+
+    .logo {
+        max-height: 4.5rem;
+        max-width: 4.5rem;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem !important;
+}
+
+#info {
+    margin: 5% 0;
+}
+
+ul {
+    text-align: left;
+}
+
+.social {
+    margin-bottom: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.icon {
+    max-height: 2rem;
+    max-width: 2rem;
+    margin-right: 0.2rem;
+}
+
+/* .container {
+    border: 1px solid red;
+}
+
+.colu {
+    border: 1px solid green;
+} */
+
+/* md */
+@media screen and (min-width: 768px) {
+    html {
+    font-size: 15px !important;
+    }
+
+    h1 {
+        font-size: 4rem !important;
+    }
+
+    h3 {
+        font-size: 1.75rem !important;
+    }
+
+    #info {
+        margin: 0;
+    }
+    .social {
+        margin-top: 3%;
+        margin-left: 0;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 992px) {
+    html {
+    font-size: 18px !important;
+    }
+}
+
+/* xl */
+@media screen and (min-width: 1200px) {
+    html {
+    font-size: 20px !important;
+    }
+}
