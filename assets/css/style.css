@@ -1,11 +1,4 @@
 body {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 14px;
-    background: url(../img/whitebackground.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     background-color: white;
 }
 
@@ -89,6 +82,16 @@ body {
 /* ======================================
 |||           this is the end            |||
    ======================================*/
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px;
+    background: url(../img/whitebackground.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 .my-container {
     margin: 0 !important;
