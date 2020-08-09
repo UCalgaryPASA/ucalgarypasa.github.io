@@ -56,7 +56,7 @@ body {
     max-with: 2rem;
 }
 
-@media screen and (min-width: 347) {
+@media screen and (min-width: 347px) {
     #brand {
         font-size: 0.70rem;
     }
