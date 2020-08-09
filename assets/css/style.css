@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 14px;
     background: url(../img/whitebackground.jpg);
     background-position: center center;
