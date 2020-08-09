@@ -1,3 +1,32 @@
+/* ======================================
+|||   this is the CSS for the loader    |||
+   ======================================*/
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+/* ======================================
+|||           this is the end            |||
+   ======================================*/
+
 body {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 14px;
@@ -53,7 +82,7 @@ body {
 
 .logo {
     max-height: 2rem;
-    max-with: 2rem;
+    max-width: 2rem;
 }
 
 @media screen and (min-width: 347px) {
