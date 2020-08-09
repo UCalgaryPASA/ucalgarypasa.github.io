@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
 </head>
 
 <body>
@@ -20,30 +21,6 @@
     <script src="assets/js/scripts.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- <script>
-        $(window).on("load", function () {
-            $(".loader-wrapper").fadeOut("slow");
-        });
-    </script> -->
-
-    <script>
-        setTimeout(function () {
-            $(".loader-wrapper").fadeOut("slow");
-        }, 2000);
-    </script>
-
-    <script>
-        setTimeout(function () {
-            $("#everything").fadeOut(0);
-        }, 0);
-    </script>
-
-    <script>
-        setTimeout(function () {
-            $("#everything").fadeIn("slow");
-        }, 2200);
-    </script>
 
     <div id="everything">
         <div class="container my-container">
