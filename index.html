@@ -13,64 +13,73 @@
     <script src="assets/js/scripts.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script>
+        $(document).ready(function () {
+            $("#everything").fadeIn("slow");
+
+        });
+    </script>
 </head>
 
 <body>
-    <div class="container my-container">
-        <div id="construction" class="row banner">
-            <div class="col colu text-center align-items-center">
-                Website Under Construction
+
+    <div id="everything">
+        <div class="container my-container">
+            <div id="construction" class="row banner">
+                <div class="col colu text-center align-items-center">
+                    Website Under Construction
+                </div>
+            </div>
+
+            <div id="covid" class="row align-items-center banner">
+                <div class="col colu text-center align-items-center">
+                    Click for Important COVID-19 Information
+                </div>
+            </div>
+            <div id="brand" class="row align-items-center">
+                <span id="thisspan">
+                    The Physics and Astronomy Student Association
+                    <br>The University of Calgary
+                    <br>ST 058-060
+                </span>
+                <span>
+                    <img src="assets/img/unilogo.png" alt="Uni Logo" class="logo">
+                </span>
+
+
             </div>
         </div>
 
-        <div id="covid" class="row align-items-center banner">
-            <div class="col colu text-center align-items-center">
-                Click for Important COVID-19 Information
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="colu col-md-6 text-left">
+                    <h1>PASA's Website Is Back on the Menu.</h1>
+                </div>
+                <div id="info" class="colu col-md-6 text-center">
+                    <h3>Important Information</h3>
+                    <ul>
+                        <li>PASA's room is closed for Fall 2020. Join us online!</li>
+                        <li>Memberships for Fall 2020 are free. Email us to claim yours!</li>
+                        <li>Memberships grant access to our Discord server and all online club events.</li>
+                        <li>Instagram, Discord, and our mailing list provide the most up-to-date information.</li>
+                        <li>PASA is open to all students in all majors.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div id="brand" class="row align-items-center">
-            <span id="thisspan">
-                The Physics and Astronomy Student Association
-                <br>The University of Calgary
-                <br>ST 058-060
-            </span>
-            <span>
-                <img src="assets/img/unilogo.png" alt="Uni Logo" class="logo">
-            </span>
-
-
+            <div class="row justify-content-center align-items-center">
+                <div id="email" class="social colu col-md-4 text-left text-md-center align-items-center">
+                    <img src="assets/img/mail.png" alt="Email" class="icon"><span
+                        id="emailid">physastr@ucalgary.ca</span>
+                </div>
+                <div id="instagram" class="social colu col-md-4 text-left text-md-center align-items-center">
+                    <img src="assets/img/instagram.png" alt="Instagram" class="icon">ucalgarypasa
+                </div>
+                <div id="facebook" class="social colu col-md-4 text-left text-md-center align-items-center">
+                    <img src="assets/img/facebook.png" alt="Facebook" class="icon">fb.com/UCalgaryPASA
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="colu col-md-6 text-left">
-                <h1>PASA's Website Is Back on the Menu.</h1>
-            </div>
-            <div id="info" class="colu col-md-6 text-center">
-                <h3>Important Information</h3>
-                <ul>
-                    <li>PASA's room is closed for Fall 2020. Join us online!</li>
-                    <li>Memberships for Fall 2020 are free. Email us to claim yours!</li>
-                    <li>Memberships grant access to our Discord server and all online club events.</li>
-                    <li>Instagram, Discord, and our mailing list provide the most up-to-date information.</li>
-                    <li>PASA is open to all students in all majors.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div id="email" class="social colu col-md-4 text-left text-md-center align-items-center">
-                <img src="assets/img/mail.png" alt="Email" class="icon"><span id="emailid">physastr@ucalgary.ca</span>
-            </div>
-            <div id="instagram" class="social colu col-md-4 text-left text-md-center align-items-center">
-                <img src="assets/img/instagram.png" alt="Instagram" class="icon">ucalgarypasa
-            </div>
-            <div id="facebook" class="social colu col-md-4 text-left text-md-center align-items-center">
-                <img src="assets/img/facebook.png" alt="Facebook" class="icon">fb.com/UCalgaryPASA
-            </div>
-        </div>
-    </div>
-
 
 </body>
 
