@@ -1,4 +1,5 @@
 body {
+    display: none;
     background-color: white;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 14px;
