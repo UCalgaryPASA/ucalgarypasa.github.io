@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Nasa';
+    src: url('Nasa.eot');
+    src: url('Nasa.eot?#iefix') format('embedded-opentype'),
+        url('Nasa.woff2') format('woff2'),
+        url('Nasa.woff') format('woff'),
+        url('Nasa.svg#Nasa') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

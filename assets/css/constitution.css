@@ -1,0 +1,175 @@
+@import “style.css”; 
+
+.content .typed, .content .contentHeader, .content h1, .content h2, .content h3 {
+    text-align: center;
+}
+
+.content {
+    /* border: 2px solid purple; */
+    position: absolute !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 100% !important;
+    height: 100%;
+    top: 80px;
+    text-align: justify !important;
+    /* responsive */
+    padding: 0 30px;
+}
+
+.formatCol + div {
+    /* border: 1px solid yellow; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100vw;
+}
+
+.stuff {
+    /* border: 1px solid green; */
+    position: absolute;
+    top: 60px !important;
+    bottom: 140px !important;
+    left: 0 !important;
+    padding: 0 20px !important;
+    overflow: hidden !important;
+    overflow-y: auto !important;
+    /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(5%, rgba(1,1,1,1)), color-stop(95%, rgba(1,1,1,1)), color-stop(100%, rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgb(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+    ); */
+}
+
+.contentHeader {
+    font-size: 2rem;
+}
+
+.exec-row {
+    padding: 0 20px;
+}
+
+/* exec avatars */
+.avatar {
+    margin:  10px !important;
+    text-align: center;
+}
+
+.av-img {
+    width: 100%;
+    /* height is defined in javascript file to be same as width */
+    border: 2px solid white;
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 10%;
+}
+
+/* #katelynn {
+    background-image: url("../media/katelynn.jpg");
+} */
+
+#elijah {
+    background-image: url("../media/elijah.jpg");
+}
+
+#gabby {
+    background-image: url("../media/gabby.jpg");
+}
+
+#abby {
+    background-image: url("../media/abby.jpg");
+}
+
+#josh {
+    background-image: url("../media/josh.jpg");
+}
+
+#nic {
+    background-image: url("../media/nic.jpg");
+}
+
+#faith {
+    background-image: url("../media/faith.jpg");
+}
+
+#ethan {
+    background-image: url("../media/ethan.jpg");
+}
+
+#jonathan {
+    background-image: url("../media/jonathan.jpg");
+}
+
+#isaac {
+    background-image: url("../media/isaac.jpg");
+}
+
+.avatar span {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.avatar strong {
+    font-size: 1rem;
+}
+
+hr {
+    margin: 0 !important;
+    background-color: var(--text);
+}
+
+.stuff {
+    border: 1px solid green;
+    overflow: hidden !important;
+    overflow-y: auto !important;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(5%, rgba(1,1,1,1)), color-stop(95%, rgba(1,1,1,1)), color-stop(100%, rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgb(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* Change scrollbar */
+.stuff::-webkit-scrollbar {
+    width: 7px;
+}
+
+.stuff::-webkit-scrollbar-track {
+background: rgba(180, 180, 180, 0.041);
+border-radius: 15px;
+}
+
+.stuff::-webkit-scrollbar-thumb {
+/* background: #7f7f7f; */
+background: #7f7f7f3b;
+border-radius: 15px;
+}
+
+/* End change scrollbar */
