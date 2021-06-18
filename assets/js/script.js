@@ -164,7 +164,7 @@ $(document).ready(function(){
 
         // Try function to resize body to see if it helps
         function resFif(){
-            viewport_meta.setAttribute( 'content', 'width=400' );
+            viewport_meta.setAttribute( 'content', 'width=50' );
             console.log("resizing 50%");
         };
 
