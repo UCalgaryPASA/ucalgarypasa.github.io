@@ -72,7 +72,7 @@ let trans = () => {
 
 // menu marker animation
 
-while ($('#marker'.length)) {
+do {
     function menuChange() {
         if ($('#hori').is(':visible')) {
             var marker = document.querySelector('#marker');
@@ -99,7 +99,9 @@ while ($('#marker'.length)) {
         });
     };
     menuChange();
-};
+  }
+  while (condition);
+
 
 // function menuChange() {
 //     if ($('#hori').is(':visible')) {
