@@ -152,10 +152,8 @@ $(document).ready(function(){
             });
         // // Load target page into container
         // container.load(target + '.html');
-
+        container.load(target + '.html');
         console.log("Hello! I am an alert box!!");
-
-        $(window).trigger('resize');
 
         // Stop normal link behaviour
         return false;
