@@ -158,8 +158,17 @@ $(document).ready(function(){
         // Update exec avatar css property
         $(".av-img").css("width", "100%");
 
-        $("body").css({"width": "99%", "height": "99%"});
-        $("body").css({"width": "100%", "height": "100%"});
+        // Try function to resize body to see if it helps
+        function resWid(){
+            $("body").css({"width": "99%", "height": "99%"});
+        };
+
+        function resHeight(){
+            $("body").css({"width": "100%", "height": "100%"});
+        };
+
+        setTimeout(resWid, 3000);
+        setTimeout(resHeight, 3000);
 
         // Stop normal link behaviour
         return false;
