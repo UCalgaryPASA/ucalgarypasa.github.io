@@ -90,12 +90,13 @@ function menuChange() {
     }
 }
 
-$(window).resize(function () {
-    marker.style.left = 0;
-    marker.style.width = 0;
-    menuChange();
-});
-
+if ($("#marker").length) {
+    $(window).resize(function () {
+        marker.style.left = 0;
+        marker.style.width = 0;
+        menuChange();
+    });
+};
 menuChange();
 
 // Other commit comment
