@@ -130,18 +130,6 @@ $(document).ready(function() {
    })
 })
 
-// Trigger resize event to make stuff 
-// load after ajax load
-
-const heightOutput = document.querySelector('#height');
-const widthOutput = document.querySelector('#width');
-
-function reportWindowSize() {
-  heightOutput.textContent = window.innerHeight;
-  widthOutput.textContent = window.innerWidth;
-  console.log("Resized thingamajig");
-}
-
 // Load content without refreshing
 
 $(document).ready(function(){
@@ -162,28 +150,16 @@ $(document).ready(function(){
                     container.fadeIn('slow');
                 });
             });
-            $('#katelynn').css('background-image', 'url(assets/media/katelynn.jpg)');
         // // Load target page into container
         // container.load(target + '.html');
 
         console.log("Hello! I am an alert box!!");
-        
-        $.fn.redraw = function(){
-            $(this).each(function(){
-              var redraw = this.offsetHeight;
-            });
-            console.log("Redrawn success");
-          };
 
-          $("<link/>", {
-            rel: "stylesheet",
-            type: "text/css",
-            href: "assets/css/constitution.css"
-         }).appendTo("head");
+        var el = document; // This can be your element on which to trigger the event
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        el.dispatchEvent(event);
 
-          $('#updatecontent').redraw();
-          
-          window.onresize = reportWindowSize;
         // Stop normal link behaviour
         return false;
     
