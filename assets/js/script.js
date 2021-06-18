@@ -90,7 +90,7 @@ function menuChange() {
     }
 }
 
-if ($("#marker").length) {
+if ($('#marker').length) {
     $(window).resize(function () {
         marker.style.left = 0;
         marker.style.width = 0;
@@ -98,8 +98,6 @@ if ($("#marker").length) {
     });
 };
 menuChange();
-
-// Other commit comment
 
 // Cursor change code
 
