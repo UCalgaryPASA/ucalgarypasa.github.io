@@ -77,12 +77,12 @@ while ($('#marker'.length)) {
         if ($('#hori').is(':visible')) {
             var marker = document.querySelector('#marker');
             var item = document.querySelectorAll('nav a');
-    
+
             function indicator(e) {
                 marker.style.left = e.offsetLeft + "px";
                 marker.style.width = e.offsetWidth + "px";
             }
-    
+
             item.forEach(link => {
                 link.addEventListener('mouseover', (e) => {
                     indicator(e.target);
@@ -90,7 +90,7 @@ while ($('#marker'.length)) {
             })
         }
     }
-    
+
     if ($('#marker').length) {
         $(window).resize(function () {
             marker.style.left = 0;
@@ -99,7 +99,7 @@ while ($('#marker'.length)) {
         });
     };
     menuChange();
-  }
+};
 
 // function menuChange() {
 //     if ($('#hori').is(':visible')) {
@@ -130,57 +130,57 @@ while ($('#marker'.length)) {
 
 // Cursor change code
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#bigchung').on('click', function() {
+    $('#bigchung').on('click', function () {
         $('body').css('cursor', 'url(assets/cursors/big_chungus_cursor.cur),auto');
     })
 })
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-     $('#ugchung').on('click', function() {
+    $('#ugchung').on('click', function () {
         $('body').css('cursor', 'url(assets/cursors/ugandan-chungus-cursor.cur),auto');
     })
 })
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#amus').on('click', function() {
-       $('body').css('cursor', 'url(assets/cursors/among-us-pointer.cur),auto');
-   })
+    $('#amus').on('click', function () {
+        $('body').css('cursor', 'url(assets/cursors/among-us-pointer.cur),auto');
+    })
 })
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#cureset').on('click', function() {
-       $('body').css({ 'cursor' : ''});
-   })
+    $('#cureset').on('click', function () {
+        $('body').css({ 'cursor': '' });
+    })
 })
 
 // Load content without refreshing
 
-$(document).ready(function(){
+$(document).ready(function () {
     // Set trigger and container variables
     var trigger = $('#princmenu a'),
         container = $('#updatecontent');
 
     // Fire on click
-    trigger.on('click', function(){
+    trigger.on('click', function () {
         // Set $this for re-use. Set target from data attribute
         // (idk what the target from data attribute means it's
         // from the video)
         var $this = $(this),
             target = $this.data('target');
 
-            container.fadeOut('slow', function(){
-                container.load(target + '.html', function(){
-                    container.fadeIn('slow');
-                });
+        container.fadeOut('slow', function () {
+            container.load(target + '.html', function () {
+                container.fadeIn('slow');
             });
+        });
         // // Load target page into container
         // container.load(target + '.html');
-        
+
         console.log("Hello! I am an alert box!!");
 
         // Update exec avatar css property
@@ -188,13 +188,13 @@ $(document).ready(function(){
 
         // setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
 
-        setTimeout(function(){ $(window).trigger('resize'); }, 3000);
-        
-        
+        setTimeout(function () { $(window).trigger('resize'); }, 3000);
+
+
 
         // Stop normal link behaviour
         return false;
-    
+
 
     });
 
