@@ -155,10 +155,7 @@ $(document).ready(function(){
 
         console.log("Hello! I am an alert box!!");
 
-        var el = document; // This can be your element on which to trigger the event
-        var event = document.createEvent('HTMLEvents');
-        event.initEvent('resize', true, false);
-        el.dispatchEvent(event);
+        $(window).trigger('resize');
 
         // Stop normal link behaviour
         return false;
