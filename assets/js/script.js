@@ -155,10 +155,11 @@ $(document).ready(function(){
         
         console.log("Hello! I am an alert box!!");
 
-        window.innerHeight;
-
         // Update exec avatar css property
         $(".av-img").css("width", "100%");
+
+        $("body").css({"width": "99%", "height": "99%"});
+        $("body").css({"width": "100%", "height": "100%"});
 
         // Stop normal link behaviour
         return false;
