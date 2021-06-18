@@ -60,7 +60,7 @@
 }
 
 .av-img {
-    width: 100%;
+    /* width: 100%; */
     /* height is defined in javascript file to be same as width */
     border: 2px solid white;
     border-radius: 50%;
