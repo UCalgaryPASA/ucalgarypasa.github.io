@@ -100,7 +100,7 @@ do {
     };
     menuChange();
   }
-  while (condition);
+  while ($('#marker').length);
 
 
 // function menuChange() {
