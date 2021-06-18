@@ -130,6 +130,17 @@ $(document).ready(function() {
    })
 })
 
+// Trigger resize event to make stuff 
+// load after ajax load
+
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+  console.log("Resized thingamajig");
+}
 
 // Load content without refreshing
 
@@ -172,7 +183,7 @@ $(document).ready(function(){
 
           $('#updatecontent').redraw();
           
-
+          window.onresize = reportWindowSize;
         // Stop normal link behaviour
         return false;
     
@@ -180,3 +191,4 @@ $(document).ready(function(){
     });
 
 });
+
