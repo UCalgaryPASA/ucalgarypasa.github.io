@@ -157,8 +157,10 @@ $(document).ready(function(){
         // Update exec avatar css property
         $(".av-img").css('width', '100%');
 
-        setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
+        // setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
 
+        setTimeout(function(){ $(window).trigger('resize'); }, 3000);
+        
         
 
         // Stop normal link behaviour
