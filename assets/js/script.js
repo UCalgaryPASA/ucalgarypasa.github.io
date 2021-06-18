@@ -155,16 +155,9 @@ $(document).ready(function(){
         console.log("Hello! I am an alert box!!");
 
         // Update exec avatar css property
-        $(".av-img").css("width", "100%");
+        $(".av-img").css('width', '100%');
 
-        $(document).ready(() => {
-            $('.master').on('click', () => {
-                $(window).trigger('resize');
-            });
-            $(window).resize(() => {
-                console.log("resize function called");
-            })
-        });
+        $('.avatar').css('width','10%');
 
         // Stop normal link behaviour
         return false;
