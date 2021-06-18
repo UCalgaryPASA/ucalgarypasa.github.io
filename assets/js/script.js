@@ -156,7 +156,8 @@ $(document).ready(function () {
         console.log("Hello! I am an alert box!!");
 
         // Update exec avatar css property
-        $(".av-img").css('width', '100%');
+        $('.avatar').css('width', '100%');
+        $('.av-img').css('width', '100%');
 
         // setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
 
