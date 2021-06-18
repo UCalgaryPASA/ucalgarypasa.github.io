@@ -147,32 +147,6 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript">
-                function menuChange() {
-                    if ($('#hori').is(':visible')) {
-                        var marker = document.querySelector('#marker');
-                        var item = document.querySelectorAll('nav a');
-
-                        function indicator(e) {
-                            marker.style.left = e.offsetLeft + "px";
-                            marker.style.width = e.offsetWidth + "px";
-                        }
-
-                        item.forEach(link => {
-                            link.addEventListener('mouseover', (e) => {
-                                indicator(e.target);
-                            })
-                        })
-                    }
-                }
-
-                $(window).resize(function () {
-                    marker.style.left = 0;
-                    marker.style.width = 0;
-                    menuChange();
-                });
-                menuChange();
-            </script>
         </div>
 
         <!-- Bottom container -->
