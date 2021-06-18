@@ -152,7 +152,7 @@ $(document).ready(function(){
             });
         // // Load target page into container
         // container.load(target + '.html');
-        container.load(target + '.html');
+        
         console.log("Hello! I am an alert box!!");
 
         // Stop normal link behaviour
@@ -161,5 +161,6 @@ $(document).ready(function(){
 
     });
 
+    container.load(target + '.html');
 });
 
