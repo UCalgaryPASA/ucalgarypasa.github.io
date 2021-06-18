@@ -158,14 +158,18 @@ $(document).ready(function(){
         // Update exec avatar css property
         $(".av-img").css("width", "100%");
 
+        // Resize viewport to force load
+        // Store the meta element
+        var viewport_meta = document.getElementById('viewport-meta');
+
         // Try function to resize body to see if it helps
         function resFif(){
-            $("#body").css({"width": "50%", "height": "50%"});
+            viewport_meta.setAttribute( 'content', 'width=400' );
             console.log("resizing 50%");
         };
 
         function resHun(){
-            $("#body").css({"width": "100%", "height": "100%"});
+            viewport_meta.setAttribute( 'content', 'width=100' );
             console.log("resizing 100%");
         };
 
