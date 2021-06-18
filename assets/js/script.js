@@ -161,6 +161,5 @@ $(document).ready(function(){
 
     });
 
-    container.load(target + '.html');
 });
 
