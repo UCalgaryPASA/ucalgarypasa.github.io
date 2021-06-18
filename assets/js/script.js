@@ -72,6 +72,35 @@ let trans = () => {
 
 // menu marker animation
 
+while ($('#marker'.length)) {
+    function menuChange() {
+        if ($('#hori').is(':visible')) {
+            var marker = document.querySelector('#marker');
+            var item = document.querySelectorAll('nav a');
+    
+            function indicator(e) {
+                marker.style.left = e.offsetLeft + "px";
+                marker.style.width = e.offsetWidth + "px";
+            }
+    
+            item.forEach(link => {
+                link.addEventListener('mouseover', (e) => {
+                    indicator(e.target);
+                })
+            })
+        }
+    }
+    
+    if ($('#marker').length) {
+        $(window).resize(function () {
+            marker.style.left = 0;
+            marker.style.width = 0;
+            menuChange();
+        });
+    };
+    menuChange();
+  }
+
 // function menuChange() {
 //     if ($('#hori').is(':visible')) {
 //         var marker = document.querySelector('#marker');
