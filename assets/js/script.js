@@ -155,6 +155,13 @@ $(document).ready(function(){
         
         console.log("Hello! I am an alert box!!");
 
+        // Stop normal link behaviour
+        return false;
+    
+
+    });
+
+
         // Update exec avatar css property
         $(".av-img").css("width", "100%");
 
@@ -165,12 +172,6 @@ $(document).ready(function(){
         $(window).resize(function() {
             alert('Handler for .resize() called!');
         });
-
-        // Stop normal link behaviour
-        return false;
-    
-
-    });
 
 });
 
