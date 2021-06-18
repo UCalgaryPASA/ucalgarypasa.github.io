@@ -160,17 +160,17 @@ $(document).ready(function(){
 
         // Try function to resize body to see if it helps
         function resFif(){
-            $(".body").css({"width": "50%", "height": "50%"});
+            $("#updatecontent").css({"width": "50%", "height": "50%"});
             console.log("resizing 50%");
         };
 
         function resHun(){
-            $(".body").css({"width": "100%", "height": "100%"});
+            $("#updatecontent").css({"width": "100%", "height": "100%"});
             console.log("resizing 100%");
         };
 
         setTimeout(resFif, 3000);
-        setTimeout(resHun, 3000);
+        setTimeout(resHun, 6000);
 
         // Stop normal link behaviour
         return false;
