@@ -164,13 +164,13 @@ $(document).ready(function(){
 
         // Try function to resize body to see if it helps
         function resFif(){
-            viewport_meta.setAttribute( 'content', 'width=50' );
-            console.log("resizing 50%");
+            viewport_meta.setAttribute( 'content', 'width=990' );
+            console.log(viewport_meta.content);
         };
 
         function resHun(){
-            viewport_meta.setAttribute( 'content', 'width=100' );
-            console.log("resizing 100%");
+            viewport_meta.setAttribute( 'content', 'width=800' );
+            console.log(viewport_meta.content);
         };
 
         setTimeout(resFif, 3000);
