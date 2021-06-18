@@ -157,7 +157,9 @@ $(document).ready(function(){
         // Update exec avatar css property
         $(".av-img").css('width', '100%');
 
-        $('.avatar').css('width','10%');
+        setTimeout(function(){ $('.avatar').css('width','10%'); }, 3000);
+
+        
 
         // Stop normal link behaviour
         return false;
