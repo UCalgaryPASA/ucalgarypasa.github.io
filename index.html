@@ -166,13 +166,11 @@
                     }
                 }
 
-                if ($('#marker').length) {
-                    $(window).resize(function () {
-                        marker.style.left = 0;
-                        marker.style.width = 0;
-                        menuChange();
-                    });
-                };
+                $(window).resize(function () {
+                    marker.style.left = 0;
+                    marker.style.width = 0;
+                    menuChange();
+                });
                 menuChange();
             </script>
         </div>
