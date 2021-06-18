@@ -159,16 +159,16 @@ $(document).ready(function(){
         $(".av-img").css("width", "100%");
 
         // Try function to resize body to see if it helps
-        function resWid(){
-            $("body").css({"width": "99%", "height": "99%"});
+        function resFif(){
+            $("body").css({"width": "50%", "height": "50%"});
         };
 
-        function resHeight(){
+        function resHun(){
             $("body").css({"width": "100%", "height": "100%"});
         };
 
-        setTimeout(resWid, 3000);
-        setTimeout(resHeight, 3000);
+        setTimeout(resFif, 3000);
+        setTimeout(resHun, 3000);
 
         // Stop normal link behaviour
         return false;
