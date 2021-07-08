@@ -72,9 +72,6 @@ let trans = () => {
 
 // menu marker animation
 
-// try thing
-
-try{
 
 function menuChange() {
     if ($('#hori').is(':visible')) {
@@ -102,13 +99,6 @@ if ($('#marker').length) {
     });
 };
 menuChange();
-
-// try catch thing
-}catch(e){
-
-functionToHandleError(e);
-}
-// end of try catch thing
 
 // Cursor change code
 
