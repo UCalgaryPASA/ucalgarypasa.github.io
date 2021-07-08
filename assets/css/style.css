@@ -446,9 +446,9 @@ nav a:hover {
 /* Keep content in middle of page nicely centred  */
 .updatecontent p {
     padding-top: 3%;
-    padding-right: 30%;
+    padding-right: 20%;
     padding-bottom: 3%;
-    padding-left: 30%;
+    padding-left: 20%;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
