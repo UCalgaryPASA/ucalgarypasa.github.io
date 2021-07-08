@@ -149,6 +149,12 @@ hr {
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
+    .av-img {
+        /* width: 100%; */
+        /* height is defined in javascript file to be same as width */
+        /* border: 2px solid white; */
+        border-radius: 30%;
+
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
