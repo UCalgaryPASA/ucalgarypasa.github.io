@@ -446,9 +446,9 @@ nav a:hover {
 /* Keep content in middle of page nicely centred  */
 .stuff {
     margin-top: 3%;
-    margin-right: 3%;
+    margin-right: 30%;
     margin-bottom: 3%;
-    margin-left: 3%;
+    margin-left: 30%;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
