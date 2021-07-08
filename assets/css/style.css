@@ -444,11 +444,11 @@ nav a:hover {
 }
 
 /* Keep content in middle of page nicely centred  */
-#updatecontent {
+.updatecontent row {
     padding-top: 3%;
     padding-right: 30%;
     padding-bottom: 3%;
-    padding-left: 29%;
+    padding-left: 30%;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
