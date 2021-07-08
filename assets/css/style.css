@@ -444,7 +444,7 @@ nav a:hover {
 }
 
 /* Keep content in middle of page nicely centred  */
-.stuff {
+#updatecontent {
     padding-top: 3%;
     padding-right: 30%;
     padding-bottom: 3%;
