@@ -443,6 +443,11 @@ nav a:hover {
     display: none;
 }
 
+/* Keep content in middle of page nicely centred  */
+.updatecontent {
+    margin: 10% 50%;
+}
+
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
