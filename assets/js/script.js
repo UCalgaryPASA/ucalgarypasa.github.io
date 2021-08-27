@@ -139,7 +139,7 @@ $(document).ready(function () {
 $('#email').on({
     "click": function() {
       $(this).tooltip({ items: "#email", content: "Email copied!"});
-      $(this).tooltip().tooltip("open");
+      $(this).tooltip("open");
     },
     "mouseout": function() {      
        $(this).tooltip("disable");   

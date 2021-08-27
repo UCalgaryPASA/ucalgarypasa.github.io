@@ -1,0 +1,3569 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI sortable documentation</title>
+
+	<style>
+	body {
+		font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif"
+	}
+	.gutter {
+		display: none;
+	}
+	</style>
+</head>
+<body>
+
+<script>{
+		"title":
+			"Sortable Widget",
+		"excerpt":
+			"Reorder elements in a list or grid using the mouse.",
+		"termSlugs": {
+			"category": [
+				"interactions"
+			]
+		}
+	}</script><article id="sortable1" class="entry widget"><h2 class="section-title">
+<span>Sortable Widget</span><span class="version-details">version added: 1.0</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Reorder elements in a list or grid using the mouse.</p>
+<section id="quick-nav"><header><h2>QuickNav<a href="#entry-examples">Examples</a>
+</h2></header><div class="quick-nav-section">
+<h3>Options</h3>
+<div><a href="#option-appendTo">appendTo</a></div>
+<div><a href="#option-axis">axis</a></div>
+<div><a href="#option-cancel">cancel</a></div>
+<div><a href="#option-connectWith">connectWith</a></div>
+<div><a href="#option-containment">containment</a></div>
+<div><a href="#option-cursor">cursor</a></div>
+<div><a href="#option-cursorAt">cursorAt</a></div>
+<div><a href="#option-delay">delay</a></div>
+<div><a href="#option-disabled">disabled</a></div>
+<div><a href="#option-distance">distance</a></div>
+<div><a href="#option-dropOnEmpty">dropOnEmpty</a></div>
+<div><a href="#option-forceHelperSize">forceHelperSize</a></div>
+<div><a href="#option-forcePlaceholderSize">forcePlaceholderSize</a></div>
+<div><a href="#option-grid">grid</a></div>
+<div><a href="#option-handle">handle</a></div>
+<div><a href="#option-helper">helper</a></div>
+<div><a href="#option-items">items</a></div>
+<div><a href="#option-opacity">opacity</a></div>
+<div><a href="#option-placeholder">placeholder</a></div>
+<div><a href="#option-revert">revert</a></div>
+<div><a href="#option-scroll">scroll</a></div>
+<div><a href="#option-scrollSensitivity">scrollSensitivity</a></div>
+<div><a href="#option-scrollSpeed">scrollSpeed</a></div>
+<div><a href="#option-tolerance">tolerance</a></div>
+<div><a href="#option-zIndex">zIndex</a></div>
+</div>
+<div class="quick-nav-section">
+<h3>Methods</h3>
+<div><a href="#method-cancel">cancel</a></div>
+<div><a href="#method-destroy">destroy</a></div>
+<div><a href="#method-disable">disable</a></div>
+<div><a href="#method-enable">enable</a></div>
+<div><a href="#method-option">option</a></div>
+<div><a href="#method-refresh">refresh</a></div>
+<div><a href="#method-refreshPositions">refreshPositions</a></div>
+<div><a href="#method-serialize">serialize</a></div>
+<div><a href="#method-toArray">toArray</a></div>
+<div><a href="#method-widget">widget</a></div>
+</div>
+<div class="quick-nav-section">
+<h3>Events</h3>
+<div><a href="#event-activate">activate</a></div>
+<div><a href="#event-beforeStop">beforeStop</a></div>
+<div><a href="#event-change">change</a></div>
+<div><a href="#event-create">create</a></div>
+<div><a href="#event-deactivate">deactivate</a></div>
+<div><a href="#event-out">out</a></div>
+<div><a href="#event-over">over</a></div>
+<div><a href="#event-receive">receive</a></div>
+<div><a href="#event-remove">remove</a></div>
+<div><a href="#event-sort">sort</a></div>
+<div><a href="#event-start">start</a></div>
+<div><a href="#event-stop">stop</a></div>
+<div><a href="#event-update">update</a></div>
+</div></section><div class="longdesc" id="entry-longdesc">
+		<p>The jQuery UI Sortable plugin makes selected elements sortable by dragging with the mouse.</p>
+		<p><em>Note: In order to sort table rows, the <code>tbody</code> must be made sortable, not the <code>table</code>.</em></p>
+
+		<h3>Dependencies</h3>
+		<ul>
+			<li><a href="/category/ui-core/">UI Core</a></li>
+			<li><a href="/jQuery.widget/">Widget Factory</a></li>
+			<li><a href="/mouse/">Mouse Interaction</a></li>
+		</ul>
+	</div>
+<section id="options"><header><h2>Options</h2></header><div id="option-appendTo" class="api-item first-item">
+<h3>appendTo&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#jQuery">jQuery</a> or <a href="http://api.jquery.com/Types/#Element">Element</a> or <a href="http://api.jquery.com/Types/#Selector">Selector</a> or <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;parent&quot;</code>
+</div>
+<div>Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex issues).</div>
+<strong>Multiple types supported:</strong><ul>
+<li>
+<strong>jQuery</strong>: A jQuery object containing the element to append the helper to.</li>
+<li>
+<strong>Element</strong>: The element to append the helper to.</li>
+<li>
+<strong>Selector</strong>: A selector specifying which element to append the helper to.</li>
+<li>
+<strong>String</strong>: The string <code>&quot;parent&quot;</code> will cause the helper to be a sibling of the sortable item.</li>
+</ul>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>appendTo</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  appendTo: document.body</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>appendTo</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> appendTo = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;appendTo&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;appendTo&quot;</span>, document.body );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-axis" class="api-item">
+<h3>axis&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>If defined, the items can be dragged only horizontally or vertically. Possible values: <code>&quot;x&quot;</code>, <code>&quot;y&quot;</code>.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>axis</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  axis: <span class="string">&quot;x&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>axis</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> axis = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;axis&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;axis&quot;</span>, <span class="string">&quot;x&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-cancel" class="api-item">
+<h3>cancel&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Selector">Selector</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;:input,button&quot;</code>
+</div>
+<div>Prevents sorting if you start on elements matching the selector.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>cancel</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  cancel: <span class="string">&quot;a,button&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>cancel</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> cancel = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cancel&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cancel&quot;</span>, <span class="string">&quot;a,button&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-connectWith" class="api-item">
+<h3>connectWith&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Selector">Selector</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>A selector of other sortable elements that the items from this list should be connected to. This is a one-way relationship, if you want the items to be connected in both directions, the <code>connectWith</code> option must be set on both sortable elements.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>connectWith</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  connectWith: <span class="string">&quot;#shopping-cart&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>connectWith</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> connectWith = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;connectWith&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;connectWith&quot;</span>, <span class="string">&quot;#shopping-cart&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-containment" class="api-item">
+<h3>containment&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Element">Element</a> or <a href="http://api.jquery.com/Types/#Selector">Selector</a> or <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>
+				<p>Defines a bounding box that the sortable items are contrained to while dragging.</p>
+
+				<p>Note: The element specified for containment must have a calculated width and height (though it need not be explicit). For example, if you have <code>float: left</code> sortable children and specify <code>containment: &quot;parent&quot;</code> be sure to have <code>float: left</code> on the sortable/parent container as well or it will have <code>height: 0</code>, causing undefined behavior.</p>
+			</div>
+<strong>Multiple types supported:</strong><ul>
+<li>
+<strong>Element</strong>: An element to use as the container.</li>
+<li>
+<strong>Selector</strong>: A selector specifying an element to use as the container.</li>
+<li>
+<strong>String</strong>: A string identifying an element to use as the container. Possible values: <code>&quot;parent&quot;</code>, <code>&quot;document&quot;</code>, <code>&quot;window&quot;</code>.</li>
+</ul>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>containment</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  containment: <span class="string">&quot;parent&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>containment</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> containment = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;containment&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;containment&quot;</span>, <span class="string">&quot;parent&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-cursor" class="api-item">
+<h3>cursor&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;auto&quot;</code>
+</div>
+<div>Defines the cursor that is being shown while sorting.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>cursor</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  cursor: <span class="string">&quot;move&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>cursor</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> cursor = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cursor&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cursor&quot;</span>, <span class="string">&quot;move&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-cursorAt" class="api-item">
+<h3>cursorAt&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Moves the sorting element or helper so the cursor always appears to drag from the same position. Coordinates can be given as a hash using a combination of one or two keys: <code>{ top, left, right, bottom }</code>.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>cursorAt</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  cursorAt: { left: <span class="number">5</span> }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>cursorAt</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> cursorAt = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cursorAt&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;cursorAt&quot;</span>, { left: <span class="number">5</span> } );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-delay" class="api-item">
+<h3>delay&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Integer">Integer</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>0</code>
+</div>
+<div>Time in milliseconds to define when the sorting should start. Adding a delay helps preventing unwanted drags when clicking on an element.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>delay</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  delay: <span class="number">150</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>delay</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> delay = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;delay&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;delay&quot;</span>, <span class="number">150</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-disabled" class="api-item">
+<h3>disabled&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Disables the sortable if set to <code>true</code>.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>disabled</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  disabled: <span class="literal">true</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>disabled</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> disabled = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;disabled&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;disabled&quot;</span>, <span class="literal">true</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-distance" class="api-item">
+<h3>distance&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Number">Number</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>1</code>
+</div>
+<div>Tolerance, in pixels, for when sorting should start. If specified, sorting will not start until after mouse is dragged beyond distance. Can be used to allow for clicks on elements within a handle.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>distance</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  distance: <span class="number">5</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>distance</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> distance = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;distance&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;distance&quot;</span>, <span class="number">5</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-dropOnEmpty" class="api-item">
+<h3>dropOnEmpty&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>true</code>
+</div>
+<div>If <code>false</code>, items from this sortable can&apos;t be dropped on an empty connect sortable (see the <a href="#option-connectWith"><code>connectWith</code></a> option.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>dropOnEmpty</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  dropOnEmpty: <span class="literal">false</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>dropOnEmpty</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> dropOnEmpty = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;dropOnEmpty&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;dropOnEmpty&quot;</span>, <span class="literal">false</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-forceHelperSize" class="api-item">
+<h3>forceHelperSize&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>If <code>true</code>, forces the helper to have a size.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>forceHelperSize</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  forceHelperSize: <span class="literal">true</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>forceHelperSize</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> forceHelperSize = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;forceHelperSize&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;forceHelperSize&quot;</span>, <span class="literal">true</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-forcePlaceholderSize" class="api-item">
+<h3>forcePlaceholderSize&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>If true, forces the placeholder to have a size.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>forcePlaceholderSize</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  forcePlaceholderSize: <span class="literal">true</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>forcePlaceholderSize</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> forcePlaceholderSize = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;forcePlaceholderSize&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;forcePlaceholderSize&quot;</span>, <span class="literal">true</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-grid" class="api-item">
+<h3>grid&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Array">Array</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Snaps the sorting element or helper to a grid, every x and y pixels. Array values: <code>[ x, y ]</code>.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>grid</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  grid: [ <span class="number">20</span>, <span class="number">10</span> ]</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>grid</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> grid = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;grid&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;grid&quot;</span>, [ <span class="number">20</span>, <span class="number">10</span> ] );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-handle" class="api-item">
+<h3>handle&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Selector">Selector</a> or <a href="http://api.jquery.com/Types/#Element">Element</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Restricts sort start click to the specified element.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>handle</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  handle: <span class="string">&quot;.handle&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>handle</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> handle = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;handle&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;handle&quot;</span>, <span class="string">&quot;.handle&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-helper" class="api-item">
+<h3>helper&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#String">String</a> or <a href="http://api.jquery.com/Types/#Function">Function</a>()</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;original&quot;</code>
+</div>
+<div>Allows for a helper element to be used for dragging display.</div>
+<strong>Multiple types supported:</strong><ul>
+<li>
+<strong>String</strong>: If set to <code>&quot;clone&quot;</code>, then the element will be cloned and the clone will be dragged.</li>
+<li>
+<strong>Function</strong>: A function that will return a DOMElement to use while dragging. The function receives the event and the element being sorted.</li>
+</ul>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>helper</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  helper: <span class="string">&quot;clone&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>helper</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> helper = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;helper&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;helper&quot;</span>, <span class="string">&quot;clone&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-items" class="api-item">
+<h3>items&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Selector">Selector</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;&gt; *&quot;</code>
+</div>
+<div>Specifies which items inside the element should be sortable.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>items</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  items: <span class="string">&quot;&gt; li&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>items</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> items = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;items&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;items&quot;</span>, <span class="string">&quot;&gt; li&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-opacity" class="api-item">
+<h3>opacity&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Number">Number</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Defines the opacity of the helper while sorting. From <code>0.01</code> to <code>1</code>.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>opacity</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  opacity: <span class="number">0.5</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>opacity</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> opacity = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;opacity&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;opacity&quot;</span>, <span class="number">0.5</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-placeholder" class="api-item">
+<h3>placeholder&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>A class name that gets applied to the otherwise white space.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>placeholder</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  placeholder: <span class="string">&quot;sortable-placeholder&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>placeholder</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> placeholder = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;placeholder&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;placeholder&quot;</span>, <span class="string">&quot;sortable-placeholder&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-revert" class="api-item">
+<h3>revert&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a> or <a href="http://api.jquery.com/Types/#Number">Number</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>false</code>
+</div>
+<div>Whether the sortable items should revert to their new positions using a smooth animation.</div>
+<strong>Multiple types supported:</strong><ul>
+<li>
+<strong>Boolean</strong>: When set to <code>true</code>, the items will animate with the default duration.</li>
+<li>
+<strong>Number</strong>: The duration for the animation, in milliseconds.</li>
+</ul>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>revert</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  revert: <span class="literal">true</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>revert</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> revert = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;revert&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;revert&quot;</span>, <span class="literal">true</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-scroll" class="api-item">
+<h3>scroll&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Boolean">Boolean</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>true</code>
+</div>
+<div>If set to true, the page scrolls when coming to an edge.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>scroll</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  scroll: <span class="literal">false</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>scroll</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> scroll = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scroll&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scroll&quot;</span>, <span class="literal">false</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-scrollSensitivity" class="api-item">
+<h3>scrollSensitivity&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Number">Number</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>20</code>
+</div>
+<div>Defines how near the mouse must be to an edge to start scrolling.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>scrollSensitivity</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  scrollSensitivity: <span class="number">10</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>scrollSensitivity</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> scrollSensitivity = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scrollSensitivity&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scrollSensitivity&quot;</span>, <span class="number">10</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-scrollSpeed" class="api-item">
+<h3>scrollSpeed&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Number">Number</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>20</code>
+</div>
+<div>The speed at which the window should scroll once the mouse pointer gets within the <a href="#option-scrollSensitivity"><code>scrollSensitivity</code></a> distance.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>scrollSpeed</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  scrollSpeed: <span class="number">40</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>scrollSpeed</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> scrollSpeed = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scrollSpeed&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;scrollSpeed&quot;</span>, <span class="number">40</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-tolerance" class="api-item">
+<h3>tolerance&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>&quot;intersect&quot;</code>
+</div>
+<div>
+				Specifies which mode to use for testing whether the item being moved is hovering over another item. Possible values:
+				<ul>
+					<li>
+<code>&quot;intersect&quot;</code>: The item overlaps the other item by at least 50%.</li>
+					<li>
+<code>&quot;pointer&quot;</code>: The mouse pointer overlaps the other item.</li>
+				</ul>
+			</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>tolerance</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  tolerance: <span class="string">&quot;pointer&quot;</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>tolerance</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> tolerance = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;tolerance&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;tolerance&quot;</span>, <span class="string">&quot;pointer&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div id="option-zIndex" class="api-item">
+<h3>zIndex&#xA0;
+					</h3>
+<div class="option-type">
+<strong>Type: </strong><a href="http://api.jquery.com/Types/#Integer">Integer</a>
+</div>
+<div class="default">
+<strong>Default: </strong><code>1000</code>
+</div>
+<div>Z-index for element/helper while being sorted.</div>
+<strong>Code examples:</strong><p>Initialize the sortable with the <code>zIndex</code> option specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  zIndex: <span class="number">9999</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Get or set the <code>zIndex</code> option, after initialization:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> zIndex = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;zIndex&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;zIndex&quot;</span>, <span class="number">9999</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section><section id="methods"><header><h2>Methods</h2></header><div id="method-cancel"><div class="api-item first-item">
+<h3>cancel()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>Cancels a change in the current sortable and reverts it to the state prior to when the current sort was started. Useful in the stop and receive callback functions.</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the cancel method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;cancel&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-destroy"><div class="api-item">
+<h3>destroy()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>
+		Removes the sortable functionality completely. This will return the element back to its pre-init state.
+	</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the destroy method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;destroy&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-disable"><div class="api-item">
+<h3>disable()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>
+		Disables the sortable.
+	</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the disable method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;disable&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-enable"><div class="api-item">
+<h3>enable()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>
+		Enables the sortable.
+	</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the enable method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;enable&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-option">
+<div class="api-item">
+<h3>option( optionName )<span class="returns">Returns: <a href="http://api.jquery.com/Types/#Object">Object</a></span>
+</h3>
+<div>Gets the value currently associated with the specified <code>optionName</code>.</div>
+<ul><li>
+<div><strong>optionName</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>The name of the option to get.</div>
+</li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the  method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> isDisabled = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;disabled&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div class="api-item">
+<h3>option()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#PlainObject">PlainObject</a></span>
+</h3>
+<div>Gets an object containing key/value pairs representing the current sortable options hash.</div>
+<ul><li><div class="null-signature">This signature does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the  method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> options = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div class="api-item">
+<h3>option( optionName, value )<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>Sets the value of the sortable option associated with the specified <code>optionName</code>.</div>
+<ul>
+<li>
+<div><strong>optionName</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>The name of the option to set.</div>
+</li>
+<li>
+<div><strong>value</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>A value to set for the option.</div>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the  method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, <span class="string">&quot;disabled&quot;</span>, <span class="literal">true</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div class="api-item">
+<h3>option( options )<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>Sets one or more options for the sortable.</div>
+<ul><li>
+<div><strong>options</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>A map of option-value pairs to set.</div>
+</li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the  method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;option&quot;</span>, { disabled: <span class="literal">true</span> } );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+</div>
+<div id="method-refresh"><div class="api-item">
+<h3>refresh()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>Refresh the sortable items. Triggers the reloading of all sortable items, causing new items to be recognized.</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the refresh method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;refresh&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-refreshPositions"><div class="api-item">
+<h3>refreshPositions()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> (<a href="http://learn.jquery.com/jquery-ui/widget-factory/widget-method-invocation/">plugin only</a>)</span>
+</h3>
+<div>Refresh the cached positions of the sortable items. Calling this method refreshes the cached item positions of all sortables.</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the refreshPositions method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;refreshPositions&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-serialize"><div class="api-item">
+<h3>serialize( options )<span class="returns">Returns: <a href="http://api.jquery.com/Types/#String">String</a></span>
+</h3>
+<div>
+				<p>Serializes the sortable&apos;s item <code>id</code>s into a form/ajax submittable string. Calling this method produces a hash that can be appended to any url to easily submit a new item order back to the server.</p>
+
+				<p>It works by default by looking at the <code>id</code> of each item in the format <code>&quot;setname_number&quot;</code>, and it spits out a hash like <code>&quot;setname[]=number&amp;setname[]=number&quot;</code>.</p>
+
+				<p><em>Note: If serialize returns an empty string, make sure the <code>id</code> attributes include an underscore.  They must be in the form: <code>&quot;set_number&quot;</code> For example, a 3 element list with <code>id</code> attributes <code>&quot;foo_1&quot;</code>, <code>&quot;foo_5&quot;</code>, <code>&quot;foo_2&quot;</code> will serialize to <code>&quot;foo[]=1&amp;foo[]=5&amp;foo[]=2&quot;</code>. You can use an underscore, equal sign or hyphen to separate the set and number. For example <code>&quot;foo=1&quot;</code>, <code>&quot;foo-1&quot;</code>, and <code>&quot;foo_1&quot;</code> all serialize to <code>&quot;foo[]=1&quot;</code>.</em></p>
+			</div>
+<ul><li>
+<div><strong>options</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>Options to customize the serialization.</div>
+<ul>
+<li>
+<div>
+<strong>key</strong> (default: <code>the part of the attribute in front of the separator</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>Replaces <code>part1[]</code> with the specified value.</div>
+</li>
+<li>
+<div>
+<strong>attribute</strong> (default: <code>&quot;id&quot;</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>The name of the attribute to use for the values.</div>
+</li>
+<li>
+<div>
+<strong>expression</strong> (default: <code>/(.+)[-=_](.+)/</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#RegExp">RegExp</a>
+</div>
+<div>A regular expression used to split the attribute value into key and value parts.</div>
+</li>
+</ul>
+</li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the serialize method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> sorted = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;serialize&quot;</span>, { key: <span class="string">&quot;sort&quot;</span> } );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-toArray"><div class="api-item">
+<h3>toArray( options )<span class="returns">Returns: <a href="http://api.jquery.com/Types/#Array">Array</a></span>
+</h3>
+<div>Serializes the sortable&apos;s item id&apos;s into an array of string.</div>
+<ul><li>
+<div><strong>options</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>Options to customize the serialization.</div>
+<ul><li>
+<div>
+<strong>attribute</strong> (default: <code>&quot;id&quot;</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>The name of the attribute to use for the values.</div>
+</li></ul>
+</li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the toArray method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> sortedIDs = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;toArray&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div>
+<div id="method-widget"><div class="api-item">
+<h3>widget()<span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a></span>
+</h3>
+<div>
+		Returns a <code>jQuery</code> object containing the sortable element.
+	</div>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+<div>
+<strong>Code examples:</strong><p>Invoke the widget method:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> widget = $( <span class="string">&quot;.selector&quot;</span> ).sortable( <span class="string">&quot;widget&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></div></section><section id="events"><header><h2>Events</h2></header><div id="event-activate" class="api-item first-item">
+<h3>activate( event, ui )<span class="returns">Type: <code>sortactivate</code></span>
+</h3>
+<div>This event is triggered when using connected lists, every connected list on drag start receives it.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the activate callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  activate: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortactivate event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortactivate&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-beforeStop" class="api-item">
+<h3>beforeStop( event, ui )<span class="returns">Type: <code>sortbeforestop</code></span>
+</h3>
+<div>This event is triggered when sorting stops, but when the placeholder/helper is still available.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the beforeStop callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  beforeStop: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortbeforestop event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortbeforestop&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-change" class="api-item">
+<h3>change( event, ui )<span class="returns">Type: <code>sortchange</code></span>
+</h3>
+<div>This event is triggered during sorting, but only when the DOM position has changed.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the change callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  change: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortchange event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortchange&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-create" class="api-item">
+<h3>create( event, ui )<span class="returns">Type: <code>sortcreate</code></span>
+</h3>
+<div>
+		Triggered when the sortable is created.
+	</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+</li>
+</ul>
+<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the create callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  create: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortcreate event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortcreate&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-deactivate" class="api-item">
+<h3>deactivate( event, ui )<span class="returns">Type: <code>sortdeactivate</code></span>
+</h3>
+<div>This event is triggered when sorting was stopped, is propagated to all possible connected lists.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the deactivate callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  deactivate: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortdeactivate event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortdeactivate&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-out" class="api-item">
+<h3>out( event, ui )<span class="returns">Type: <code>sortout</code></span>
+</h3>
+<div>This event is triggered when a sortable item is moved away from a connected list.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the out callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  out: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortout event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortout&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-over" class="api-item">
+<h3>over( event, ui )<span class="returns">Type: <code>sortover</code></span>
+</h3>
+<div>This event is triggered when a sortable item is moved into a connected list.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the over callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  over: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortover event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortover&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-receive" class="api-item">
+<h3>receive( event, ui )<span class="returns">Type: <code>sortreceive</code></span>
+</h3>
+<div>This event is triggered when an item from a connected sortable list has been dropped into another list. The latter is the event target.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the receive callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  receive: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortreceive event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortreceive&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-remove" class="api-item">
+<h3>remove( event, ui )<span class="returns">Type: <code>sortremove</code></span>
+</h3>
+<div>This event is triggered when a sortable item from the list has been dropped into another. The former is the event target.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the remove callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  remove: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortremove event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortremove&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-sort" class="api-item">
+<h3>sort( event, ui )<span class="returns">Type: <code>sort</code></span>
+</h3>
+<div>This event is triggered during sorting.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the sort callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  sort: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sort event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sort&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-start" class="api-item">
+<h3>start( event, ui )<span class="returns">Type: <code>sortstart</code></span>
+</h3>
+<div>This event is triggered when sorting starts.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the start callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  start: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortstart event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortstart&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-stop" class="api-item">
+<h3>stop( event, ui )<span class="returns">Type: <code>sortstop</code></span>
+</h3>
+<div>This event is triggered when sorting has stopped.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the stop callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  stop: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortstop event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortstop&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div>
+<div id="event-update" class="api-item">
+<h3>update( event, ui )<span class="returns">Type: <code>sortupdate</code></span>
+</h3>
+<div>This event is triggered when the user stopped sorting and the DOM position has changed.</div>
+<ul>
+<li>
+<div><strong>event</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div></div>
+</li>
+<li>
+<div><strong>ui</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div><strong>helper</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the helper being sorted</div>
+</li>
+<li>
+<div><strong>item</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The jQuery object representing the current dragged element</div>
+</li>
+<li>
+<div><strong>offset</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current absolute position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>position</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The current position of the helper represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>originalPosition</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div>The original position of the element represented as <code>{ top, left }</code>
+</div>
+</li>
+<li>
+<div><strong>sender</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>The sortable that the item comes from if moving from one sortable to another</div>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<strong>Code examples:</strong><p>Initialize the sortable with the update callback specified:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).sortable({</code></div></div><div class="container"><div class="line"><code>  update: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<p>Bind an event listener to the sortupdate event:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.selector&quot;</span> ).on( <span class="string">&quot;sortupdate&quot;</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+</div></section><section class="entry-examples" id="entry-examples"><header><h2>Example:</h2></header><div class="entry-example" id="example-0">
+<p>A simple jQuery UI Sortable.</p>
+<div class="syntaxhighlighter xml">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">&quot;en&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">&quot;utf-8&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>sortable demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">&quot;stylesheet&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">&quot;//code.jquery.com/jquery-1.8.3.js&quot;</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">&quot;//code.jquery.com/ui/1.9.2/jquery-ui.js&quot;</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">&quot;sortable&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span>&gt;</span>Item 3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span>&gt;</span>Item 4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span>&gt;</span>Item 5<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">&quot;#sortable&quot;</span>).sortable();</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo" data-height="150"></div>
+</div></section>
+</div></article>
+
+
+</body>
+</html>
