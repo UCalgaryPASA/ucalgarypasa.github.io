@@ -132,11 +132,12 @@ hr {
 
 
 .innerStuff {
-    margin: 10px 7% !important;
+    margin: 0 7% !important;
 }
 
 #constitution {
-    width: 100%;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
