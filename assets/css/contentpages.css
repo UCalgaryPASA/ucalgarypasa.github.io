@@ -148,6 +148,11 @@ hr {
         margin: 0 auto !important;
     }
 
+    .innerStuff p {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
