@@ -135,9 +135,8 @@ $(document).ready(function () {
 
 // Check if "class" of the "free" div exists
 // If it does, delete the "free" part
-if ($(".jsx-1187777628")[0]){
-    $('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
-}
+$('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
+
 
 
 
