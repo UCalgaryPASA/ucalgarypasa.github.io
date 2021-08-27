@@ -150,7 +150,7 @@ hr {
 @media (min-width: 576px) {
     
     .innerStuff {
-        width: 500px !important;
+        width: 540px !important;
         margin: 0 auto !important;
     }
 
@@ -158,7 +158,11 @@ hr {
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    
+    .innerStuff {
+        width: 650px !important;
+        margin: 0 auto !important;
+    }
 
 }
 
