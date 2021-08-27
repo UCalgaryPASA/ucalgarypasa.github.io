@@ -31,13 +31,13 @@
 .stuff {
     /* border: 1px solid green; */
     /* putting "absolute position" allows for the scroll bar to be seen */
-    /* position: absolute; */
-    /* top: 60px !important;
-    bottom: 140px !important; */
+    position: absolute;
+    top: 60px !important;
+    bottom: 140px !important;
     /* left: 50% !important; */
     /* padding: 0 20px !important; */
-    /* overflow: auto !important; */
-    overflow-y: scroll !important;
+    overflow: hidden !important;
+    overflow-y: auto !important;
     /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(5%, rgba(1,1,1,1)), color-stop(95%, rgba(1,1,1,1)), color-stop(100%, rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0) 0%,
@@ -47,10 +47,6 @@
     ); */
 }
 
-.row {
-    /* overflow: auto !important; */
-    overflow-y: scroll !important;
-}
 
 .contentHeader {
     font-size: 2rem;
