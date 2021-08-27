@@ -150,7 +150,7 @@ hr {
 @media (min-width: 576px) {
     
     .innerStuff {
-        width: 560px !important;
+        width: 500px !important;
         margin: 0 auto !important;
     }
 
