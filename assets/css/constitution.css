@@ -17,16 +17,16 @@
     padding: 0 30px;
 }
 
-/* .formatCol + div { */
-    /* border: 1px solid yellow; */
-    /*  */
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
-    /* margin: 0 !important; */
-    /* padding: 0 !important; */
-    /* max-width: 100vw; */
-/* } */
+.formatCol + div {
+    border: 1px solid yellow;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100vw;
+}
 
 .stuff {
     /* border: 1px solid green; */
