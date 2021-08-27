@@ -177,12 +177,12 @@ hr {
 @media (min-width: 1200px) {
 
     .innerStuff {
-        margin: 0 25% !important;
+        margin: 0 23% !important;
     }
 
 }
 
-@media (min-width: 2500px) {
+@media (min-width: 2600px) {
 
     .innerStuff {
         margin: 0 30% !important;
