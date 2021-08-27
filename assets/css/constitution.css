@@ -48,8 +48,8 @@
 }
 
 .row {
-    overflow: auto !important;
-    overflow-y: auto !important;
+    /* overflow: auto !important; */
+    overflow-y: scroll !important;
 }
 
 .contentHeader {
