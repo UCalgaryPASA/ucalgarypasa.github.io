@@ -193,15 +193,6 @@ hr {
 
 }
 
-@media (min-width: 2600px) {
-
-    .innerStuff {
-        width: 1300px !important;
-        margin: 0 auto !important;
-    }
-
-}
-
 /* Change scrollbar */
 .stuff::-webkit-scrollbar {
     width: 7px;
