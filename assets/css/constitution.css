@@ -132,6 +132,7 @@ hr {
     border: 1px solid green;
     overflow: hidden !important;
     overflow-y: auto !important;
+    justify-content: center !important;
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(5%, rgba(1,1,1,1)), color-stop(95%, rgba(1,1,1,1)), color-stop(100%, rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0) 0%,
@@ -144,7 +145,6 @@ hr {
 .innerStuff {
     /* margin: 0 7% !important; */
     position: relative;
-    justify-content: center;
     width: 400px !important;
 }
 
