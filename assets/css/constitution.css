@@ -144,7 +144,7 @@ hr {
 
 .innerStuff {
     /* margin: 0 7% !important; */
-    position: relative;
+    /* position: relative; */
     justify-content: center !important;
     width: 400px !important;
 }
