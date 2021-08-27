@@ -130,6 +130,14 @@ $(document).ready(function () {
     })
 })
 
+
+// Delete "free" watermark thing for elfsight event widget
+
+$(window).load(function () {
+    $('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
+});
+
+
 // Load content without refreshing
 
 // We're temporarily not doing this
