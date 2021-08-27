@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASA</title>
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="master container">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <!-- Top Row with Uni Logo and Night Mode -->
+        <div id="topBar" class="container top-container outline">
+            <div class="row top-row justify-content-between outline align-items-center text-center">
+                <div id="brand" class="col-4 outline text-left">
+                    <a href="https://science.ucalgary.ca/physics-astronomy"
+                        style="text-decoration: none; color: inherit;">
+                        <table>
+                            <tr class="outline">
+                                <td id="unilogo" rowspan="2" class="outline">
+                                    U
+                                </td>
+                                <td class="outline">
+                                    University of
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="outline">
+                                    Calgary
+                                </td>
+                            </tr>
+                            </tr>
+                        </table>
+                    </a>
+                </div>
+                <div id="burger" class="col-2 outline text-center hamburger">
+                    <button class="navbar-toggler outline" data-toggle="collapse" data-target="#navLinks"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                    </button>
+                </div>
+                <div class="col-4 outline">
+                    <table id="daynight" class="outline">
+                        <tr>
+                            <td class="outline">
+                                <input type="checkbox" id="toggle" name="theme" />
+                                <label for="toggle" class="outline"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="light" class="outline">
+                                light mode
+                            </td>
+                            <td id="night" class="outline hide">
+                                night mode
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="dropdown" class="row justify-contents-center text-center hamburger">
+                <div id="navLinks" class="collapse navbar-collapse">
+                    <ul class="navbar-nav outline">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="constitution.html" class="nav-link">Constitution</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="elecnorms.html" class="nav-link">Election Norms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="events.html" class="nav-link">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="horiline hide">
+        </div>
+
+        <!-- Middle row -->
+        <div class="updatecontent content container">
+            <div class="row outline justify-content-center align-items-center">
+                <!-- <div class="col-12 col-md-6 outline"> -->
+                <div class="col-12 outline">
+                    <div class="contentHeader outline">
+                        <!-- Don't forget funny comment to help with spacing -->
+                        <span class="typed">Events</span><! -- 
+                    --><span class="type-cursor">|</span>
+                    </div>
+                </div>
+
+                <!-- <div class="stuff col-12 col-md-6 outline"> -->
+
+                <div class="row outline justify-content-center align-items-center">
+                    <!-- formatCol helps with formatting -->
+                    <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
+                    <div class="stuff col-12 outline">
+                        <div class="con innerStuff">
+                            <div class="elfsight-app-b57bed61-de76-4d08-9d7a-df37016431c2"></div>
+                            <!-- Header acts as a space -->
+                            <h3> </h3>
+                        </div>
+                    </div>
+                    <!-- formatCol helps with formatting -->
+                    <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom container -->
+        <div id="bottom" class="container top-container">
+            <div class="row bottom-row justify-content-between align-items-center">
+                <div class="outline col text-left">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="far fa-envelope"></i>
+                </div>
+                <div id="cursor" class="outline col text-right">
+                    <div class="dropup">
+                        <button class="dropbtn">Choose your cursor</button>
+                        <div class="dropup-content">
+                            <a id="bigchung" href="#" src=><img href="#"
+                                    src="assets/cursors/big_chungus_cursor.png"></a>
+                            <a id="ugchung" href="#" src=><img href="#"
+                                    src="assets/cursors/ugandan-chungus-cursor.png"></a>
+                            <a id="amus" href="#" src=><img href="#" src="assets/cursors/among-us-pointer.png"></a>
+                            <a id="cureset" href="#">Reset</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contentpages.css">
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
