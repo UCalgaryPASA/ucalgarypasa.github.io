@@ -141,21 +141,19 @@ hr {
     );
 }
 
+.innerStuff {
+    margin: 0 7% !important;
+}
+
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
-    .innerStuff {
-        margin: 0 7% !important;
-    }
 
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-    .innerStuff {
-        margin: 0 20% !important;
-    }
 
 }
 
@@ -170,6 +168,9 @@ hr {
 
         /* why aren't you updatiiiing */
 
+        .innerStuff {
+            margin: 0 20% !important;
+        }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
