@@ -144,6 +144,10 @@ hr {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
+    .innerStuff {
+        margin: 0 7% !important;
+    }
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
