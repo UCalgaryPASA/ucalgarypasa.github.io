@@ -50,10 +50,6 @@
     ); */
 }
 
-.innerStuff {
-    margin: 0 20% !important;
-}
-
 
 .contentHeader {
     font-size: 2rem;
@@ -153,6 +149,9 @@ hr {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
+    .innerStuff {
+        margin: 0 20% !important;
+    }
 
 }
 
