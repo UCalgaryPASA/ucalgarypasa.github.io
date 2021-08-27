@@ -133,6 +133,48 @@ $(document).ready(function () {
 
 })
 
+// Copying email 
+
+// Display tooltip for "Email copied!"
+$('#email').on({
+    "click": function() {
+      $(this).tooltip({ items: "#email", content: "Email copied!"});
+      $(this).tooltip("open");
+    },
+    "mouseout": function() {      
+       $(this).tooltip("disable");   
+    }
+  });
+
+
+// Copy email and link other social media buttons
+$("#email").click(function(){
+
+    copyToClipboard("physastr@ucalgary.ca");
+    $("#emailid").html("Email Copied to Clipboard");
+
+})
+
+$("#instagram").click(function(){
+
+    window.open("https://www.instagram.com/ucalgarypasa");
+
+})
+
+$("#facebook").click(function(){
+
+    window.open("https://www.fb.com/UCalgaryPASA");
+
+})
+
+function copyToClipboard(text) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(text).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
 
 // Load content without refreshing
 
