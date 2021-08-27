@@ -48,6 +48,12 @@
     ); */
 }
 
+.inStuff {
+    position: relative; 
+    left: -50%; 
+    border: dotted red 1px;
+}
+
 .contentHeader {
     font-size: 2rem;
 }
