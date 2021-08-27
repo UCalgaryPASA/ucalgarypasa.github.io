@@ -47,6 +47,11 @@
     ); */
 }
 
+.row {
+    overflow: scroll !important;
+    overflow-y: auto !important;
+}
+
 .contentHeader {
     font-size: 2rem;
 }
