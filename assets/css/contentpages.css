@@ -28,7 +28,7 @@
     max-width: 100vw;
 }
 
-.stuff {
+.textstuff {
     /* border: 1px solid green; */
     /* putting "absolute position" allows for the scroll bar to be seen */
     position: absolute;
@@ -148,6 +148,7 @@ hr {
 
 #constitution {
     width: 100%;
+    height: 100%;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
