@@ -32,8 +32,8 @@
     /* border: 1px solid green; */
     /* putting "absolute position" allows for the scroll bar to be seen */
     /* position: absolute; */
-    top: 60px !important;
-    bottom: 140px !important;
+    /* top: 60px !important;
+    bottom: 140px !important; */
     /* left: 50% !important; */
     /* padding: 0 20px !important; */
     overflow: auto !important;
