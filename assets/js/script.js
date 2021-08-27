@@ -132,44 +132,46 @@ $(document).ready(function () {
 
 // Load content without refreshing
 
-$(document).ready(function () {
-    // Set trigger and container variables
-    var trigger = $('#princmenu a'),
-        container = $('#updatecontent');
+// We're temporarily not doing this
 
-    // Fire on click
-    trigger.on('click', function () {
-        // Set $this for re-use. Set target from data attribute
-        // (idk what the target from data attribute means it's
-        // from the video)
-        var $this = $(this),
-            target = $this.data('target');
+// $(document).ready(function () {
+//    // Set trigger and container variables
+//    var trigger = $('#princmenu a'),
+//        container = $('#updatecontent');
+//
+//    // Fire on click
+//    trigger.on('click', function () {
+//        // Set $this for re-use. Set target from data attribute
+//        // (idk what the target from data attribute means it's
+//        // from the video)
+//        var $this = $(this),
+//            target = $this.data('target');
+//
+//        container.fadeOut('slow', function () {
+//            container.load(target + '.html', function () {
+//                container.fadeIn('slow');
+//            });
+//        });
+//        // // Load target page into container
+//        // container.load(target + '.html');
+//
+//        console.log("Hello! I am an alert box!!");
+//
+//        // Update exec avatar css property
+//        $('.avatar').css('width', '100%');
+//        $('.av-img').css('width', '100%');
+//
+//        // setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
+//
+//        setTimeout(function () { $(window).trigger('resize'); }, 3000);
+//
+//
+//
+//        // Stop normal link behaviour
+//        return false;
+//
+//
+//    });
 
-        container.fadeOut('slow', function () {
-            container.load(target + '.html', function () {
-                container.fadeIn('slow');
-            });
-        });
-        // // Load target page into container
-        // container.load(target + '.html');
-
-        console.log("Hello! I am an alert box!!");
-
-        // Update exec avatar css property
-        $('.avatar').css('width', '100%');
-        $('.av-img').css('width', '100%');
-
-        // setTimeout(function(){ $('#katelynn').css('background-image','url(assets/media/katelynn.jpg)'); }, 3000);
-
-        setTimeout(function () { $(window).trigger('resize'); }, 3000);
-
-
-
-        // Stop normal link behaviour
-        return false;
-
-
-    });
-
-});
+// });
 
