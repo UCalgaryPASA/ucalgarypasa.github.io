@@ -176,11 +176,11 @@ hr {
         border-radius: 50%;
 
         /* why aren't you updatiiiing */
-
-        .innerStuff {
-            width: 980px !important;
+    }
+    .innerStuff {
+            width: 950px !important;
             margin: 0 auto !important;
-        }
+    }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
