@@ -214,3 +214,9 @@ border-radius: 15px;
 }
 
 /* End change scrollbar */
+
+/* Hide "free" event widget tag */
+
+a[href='https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget']{ 
+    display: none; 
+}
