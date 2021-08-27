@@ -467,6 +467,16 @@ nav a:hover {
         font-size: 20px;
     }
 
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    :root {
+        font-size: 22px;
+    }
+
     #vert {
         display: none;
     }
@@ -476,15 +486,6 @@ nav a:hover {
         max-width: 100%;
         margin: 0 !important;
         padding: 0 0 20px 0 !important;
-    }
-
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-    :root {
-        font-size: 22px;
     }
 
 }
