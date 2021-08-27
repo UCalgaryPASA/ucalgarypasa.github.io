@@ -143,6 +143,8 @@ hr {
 
 .innerStuff {
     /* margin: 0 7% !important; */
+    position: relative;
+    text-align: center;
     width: 400px !important;
 }
 
