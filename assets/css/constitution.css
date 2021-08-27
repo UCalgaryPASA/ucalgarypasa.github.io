@@ -142,7 +142,8 @@ hr {
 }
 
 .innerStuff {
-    margin: 0 7% !important;
+    /* margin: 0 7% !important; */
+    width: 400px !important;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -169,7 +170,7 @@ hr {
         /* why aren't you updatiiiing */
 
         .innerStuff {
-            margin: 0 20% !important;
+            /* margin: 0 20% !important; */
         }
 }
 
@@ -177,7 +178,7 @@ hr {
 @media (min-width: 1200px) {
 
     .innerStuff {
-        margin: 0 23% !important;
+        /* margin: 0 23% !important; */
     }
 
 }
@@ -185,7 +186,7 @@ hr {
 @media (min-width: 2600px) {
 
     .innerStuff {
-        margin: 0 30% !important;
+        /* margin: 0 30% !important; */
     }
 
 }
