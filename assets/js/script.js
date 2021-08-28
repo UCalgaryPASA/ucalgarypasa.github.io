@@ -136,15 +136,7 @@ $(document).ready(function () {
 // Copying email 
 
 // Display tooltip for "Email copied!"
-$('#email').on({
-    "click": function() {
-      $(this).tooltip({ items: "#email", content: "Email copied!"});
-      $(this).tooltip("open");
-    },
-    "mouseout": function() {      
-       $(this).tooltip("disable");   
-    }
-  });
+
 
 
 // Copy email and link other social media buttons
