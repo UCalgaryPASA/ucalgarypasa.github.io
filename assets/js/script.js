@@ -133,12 +133,6 @@ $(document).ready(function () {
 
 })
 
-// Copying email 
-
-// Display tooltip for "Email copied!"
-
-
-
 // Copy email and link other social media buttons
 $("#email").click(function(){
 
