@@ -52,7 +52,7 @@
     );
 }
 
-.map{
+#map{
     align: center
 }
 
@@ -79,12 +79,8 @@
     margin-bottom: 10%;
 }
 
-/* #katelynn {
-    background-image: url("../media/katelynn.jpg");
-} */
-
-#elijah {
-    background-image: url("../media/elijah.jpg");
+#emina {
+    background-image: url("../media/emina.jpg");
 }
 
 #gabby {
@@ -95,28 +91,28 @@
     background-image: url("../media/abby.jpg");
 }
 
-#josh {
-    background-image: url("../media/josh.jpg");
+#zach {
+    background-image: url("../media/zach.jpg");
 }
 
 #nic {
     background-image: url("../media/nic.jpg");
 }
 
-#faith {
-    background-image: url("../media/faith.jpg");
+#salma {
+    background-image: url("../media/salma.jpg");
 }
 
-#ethan {
-    background-image: url("../media/ethan.jpg");
+#michaela {
+    background-image: url("../media/michaela.jpg");
 }
 
 #jonathan {
     background-image: url("../media/jonathan.jpg");
 }
 
-#isaac {
-    background-image: url("../media/isaac.jpg");
+#andy {
+    background-image: url("../media/andy.jpg");
 }
 
 .avatar span {
