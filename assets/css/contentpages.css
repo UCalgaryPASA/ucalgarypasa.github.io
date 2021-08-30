@@ -52,6 +52,9 @@
     );
 }
 
+.map{
+    align: center
+}
 
 .contentHeader {
     font-size: 2rem;
