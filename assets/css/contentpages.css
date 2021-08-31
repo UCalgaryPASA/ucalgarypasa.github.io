@@ -115,6 +115,10 @@
     background-image: url("../media/andy.jpg");
 }
 
+#bigchungus {
+    background-image: url("../media/bigchungus.jpg");
+}
+
 .avatar span {
     display: block;
     font-size: 0.8rem;
