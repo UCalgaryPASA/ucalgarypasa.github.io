@@ -136,10 +136,12 @@ hr {
 
 .innerStuff {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .textstuff {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .con {
