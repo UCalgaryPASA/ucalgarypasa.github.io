@@ -119,6 +119,14 @@
     background-image: url("../media/bigchungus.jpg");
 }
 
+#emma {
+    background-image: url("../media/emma.jpeg");
+}
+
+#mckinley {
+    background-image: url("../media/mckinley.jpg");
+}
+
 .avatar span {
     display: block;
     font-size: 0.8rem;
