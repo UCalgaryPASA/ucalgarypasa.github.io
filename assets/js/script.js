@@ -104,6 +104,13 @@ menuChange();
 
 $(document).ready(function () {
 
+    $('#cashew').on('click', function () {
+        $('body').css('cursor', 'url(assets/cursors/cashew_cursor.cur),auto');
+    })
+})
+
+$(document).ready(function () {
+
     $('#bigchung').on('click', function () {
         $('body').css('cursor', 'url(assets/cursors/big_chungus_cursor.cur),auto');
     })
