@@ -105,7 +105,7 @@ menuChange();
 $(document).ready(function () {
 
     $('#cashew').on('click', function () {
-        $('body').css('cursor', 'url(assets/cursors/cashew_cursor.png),auto');
+        $('body').css('cursor', 'url(assets/cursors/cashew_cursor.cur),auto');
     })
 })
 
