@@ -104,6 +104,13 @@ menuChange();
 
 $(document).ready(function () {
 
+    $('#grogu').on('click', function () {
+        $('body').css('cursor', 'url(assets/cursors/grogu_cursor.cur),auto');
+    })
+})
+
+$(document).ready(function () {
+
     $('#cashew').on('click', function () {
         $('body').css('cursor', 'url(assets/cursors/cashew_cursor.cur),auto');
     })
