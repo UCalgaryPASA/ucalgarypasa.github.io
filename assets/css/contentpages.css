@@ -83,6 +83,11 @@
     background-image: url("../media/emina.jpg");
 }
 
+#avneet {
+    background-image: url("../media/avneet.jpeg");
+}
+
+
 #gabby {
     background-image: url("../media/gabby.jpg");
 }
@@ -95,16 +100,20 @@
     background-image: url("../media/zach.jpg");
 }
 
-#nic {
-    background-image: url("../media/nic.jpg");
+#elijah_t {
+    background-image: url("../media/elijah_t.jpg");
 }
 
-#salma {
-    background-image: url("../media/salma.jpg");
+#emma_2 {
+    background-image: url("../media/emma_2.jpg");
 }
 
 #michaela {
     background-image: url("../media/michaela.jpg");
+}
+
+#ethan_t {
+    background-image: url("../media/ethan_t.jpg");
 }
 
 #jonathan {
