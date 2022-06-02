@@ -1,4 +1,4 @@
-@import "contentpages.css"; 
+@import "contentpages.css";
 
 /* NASA font */
 @font-face {
@@ -185,13 +185,13 @@ tr {
     border: none;
     border-radius: 10px;
   }
-  
+
   /* The container <div> - needed to position the dropup content */
   .dropup {
     position: relative;
     display: inline-block;
   }
-  
+
   /* Dropup content (Hidden by Default) */
   .dropup-content {
     display: none;
@@ -205,7 +205,7 @@ tr {
     z-index: 1;
     border-radius: 10px 10px 10px 10px;
   }
-  
+
   /* Links inside the dropup */
   .dropup-content a {
     color: var(--bg);
@@ -214,19 +214,19 @@ tr {
     text-decoration: none;
     display: block;
   }
-  
+
   /* Change color of dropup links on hover */
   .dropup-content a:hover {
       background-color: var(--hover);
       color: var(--text);
       border-radius: 10px 10px 10px 10px;
     }
-  
+
   /* Show the dropup menu on hover */
   .dropup:hover .dropup-content {
     display: block;
   }
-  
+
   /* Change the background color of the dropup button when the dropup content is shown */
   .dropup:hover .dropbtn {
     background-color: var(--hover);
@@ -363,6 +363,15 @@ label:active:after {
 #pasa span {
     font-family: "Nasa", sans-serif;
     font-size: 4rem;
+}
+
+#pasa_small {
+    transform: translateY(-20px);
+}
+
+#pasa_small span {
+    font-family: "Nasa", sans-serif;
+    font-size: 1rem;
 }
 
 #vert {
