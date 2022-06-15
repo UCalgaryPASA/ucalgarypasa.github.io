@@ -5,14 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PASA</title>
-    <link rel="shortcut icon" type="image/jpg" href="assets/media/favicon.png"/>
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
+    <link rel="shortcut icon" type="image/jpg" href="../assets/media/favicon.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
+    <!-- Load packages -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Load local files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contentpages.css">
+    <script src="../js/script.js" defer></script>
 </head>
 
 <body>
@@ -74,7 +88,7 @@
                 <div id="navLinks" class="collapse navbar-collapse">
                     <ul class="navbar-nav outline">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="../index.html" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="about.html" class="nav-link">About Us</a>
@@ -109,7 +123,7 @@
                 <div class="col-12 outline">
                     <div class="contentHeader outline">
                         <!-- Don't forget funny comment to help with spacing -->
-                        <span class="typed">Events</span><! -- 
+                        <span class="typed">Election Norms</span><! -- 
                     --><span class="type-cursor">|</span>
                     </div>
                 </div>
@@ -121,7 +135,7 @@
                     <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
                     <div class="stuff col-12 outline">
                         <div class="con innerStuff">
-                            <div class="elfsight-app-b57bed61-de76-4d08-9d7a-df37016431c2"></div>
+                            <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms.pdf"></embed>
                             <!-- Header acts as a space -->
                             <h3> </h3>
                         </div>
@@ -145,15 +159,21 @@
                     <div class="dropup">
                         <button class="dropbtn">Choose your cursor</button>
                         <div class="dropup-content">
-                            <a id="grogu" href="#" src=><img href="#"
-                                src="assets/cursors/grogu_cursor.png"></a>                              
-                            <a id="cashew" href="#" src=><img href="#"
-                                src="assets/cursors/cashew_cursor.png"></a>                            
-                            <a id="bigchung" href="#" src=><img href="#"
-                                    src="assets/cursors/big_chungus_cursor.png"></a>
-                            <a id="ugchung" href="#" src=><img href="#"
-                                    src="assets/cursors/ugandan-chungus-cursor.png"></a>
-                            <a id="amus" href="#" src=><img href="#" src="assets/cursors/among-us-pointer.png"></a>
+                            <a id="grogu" href="#" src=>
+                                <img href="#" src="../assets/cursors/grogu_cursor.png">
+                            </a>                            
+                            <a id="cashew" href="#" src=>
+                                <img href="#" src="../assets/cursors/cashew_cursor.png">
+                            </a>
+                            <a id="bigchung" href="#" src=>
+                                <img href="#" src="../assets/cursors/big_chungus_cursor.png">
+                            </a>
+                            <a id="ugchung" href="#" src=>
+                                <img href="#" src="../assets/cursors/ugandan-chungus-cursor.png">
+                            </a>
+                            <a id="amus" href="#" src=>
+                                <img href="#" src="../assets/cursors/among-us-pointer.png">
+                            </a>
                             <a id="cureset" href="#">Reset</a>
                         </div>
                     </div>
@@ -161,21 +181,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/contentpages.css">
-    <script src="assets/js/script.js"></script>
 
 </body>
 
