@@ -525,8 +525,13 @@ border-radius: 15px;
 background: #7f7f7f;
 border-radius: 15px;
 }
-
 /* End change scrollbar */
+
+#front {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 /* star background */
 
