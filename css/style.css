@@ -1,4 +1,4 @@
-@import "contentpages.css"; 
+@import "contentpages.css";
 
 /* NASA font */
 @font-face {
@@ -365,6 +365,15 @@ label:active:after {
     font-size: 4rem;
 }
 
+#pasa_small {
+    transform: translateY(-20px);
+}
+
+#pasa_small span {
+    font-family: "Nasa", sans-serif;
+    font-size: 1rem;
+}
+
 #vert {
     line-height: 1 !important;
     transform: translateY(-20px);
@@ -516,8 +525,13 @@ border-radius: 15px;
 background: #7f7f7f;
 border-radius: 15px;
 }
-
 /* End change scrollbar */
+
+#front {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 /* star background */
 
