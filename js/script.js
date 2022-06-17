@@ -177,9 +177,6 @@ function copyToClipboard(text) {
     $temp.remove();
 }
 
-console.log()
-
-
 // Load content without refreshing
 
 // We're temporarily not doing this
