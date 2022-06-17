@@ -3,12 +3,12 @@
 /* NASA font */
 @font-face {
     font-family: 'Nasa';
-    src: url('../fonts/nasa/nasa.eot');
-    src: url('../fonts/nasa/nasa.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/nasa/nasa.woff2') format('woff2'),
-        url('../fonts/nasa/nasa.woff') format('woff'),
-        url('../fonts/nasa/nasa.ttf') format('truetype'),
-        url('../fonts/nasa/nasa.svg#nasa') format('svg');
+    src: url('../assets/fonts/nasa/nasa.eot');
+    src: url('../assets/fonts/nasa/nasa.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/nasa/nasa.woff2') format('woff2'),
+        url('../assets/fonts/nasa/nasa.woff') format('woff'),
+        url('../assets/fonts/nasa/nasa.ttf') format('truetype'),
+        url('../assets/fonts/nasa/nasa.svg#nasa') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -17,12 +17,12 @@
 /* Custom icons */
 @font-face {
     font-family: 'Icons';
-    src: url('../fonts/icons/icomoon.eot');
-    src: url('../fonts/icons/icomoon.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/icons/icomoon.woff2') format('woff2'),
-        url('../fonts/icons/icomoon.woff') format('woff'),
-        url('../fonts/icons/icomoon.ttf') format('truetype'),
-        url('../fonts/icons/icomoon.svg#icomoon') format('svg');
+    src: url('../assets/fonts/icons/icomoon.eot');
+    src: url('../assets/fonts/icons/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/icons/icomoon.woff2') format('woff2'),
+        url('../assets/fonts/icons/icomoon.woff') format('woff'),
+        url('../assets/fonts/icons/icomoon.ttf') format('truetype'),
+        url('../assets/fonts/icons/icomoon.svg#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -185,15 +185,15 @@ tr {
     border: none;
     border-radius: 10px;
   }
-
-  /* The container <div> - needed to position the dropup content */
-  .dropup {
+  
+/* The container <div> - needed to position the dropup content */
+.dropup {
     position: relative;
     display: inline-block;
-  }
+}
 
-  /* Dropup content (Hidden by Default) */
-  .dropup-content {
+/* Dropup content (Hidden by Default) */
+.dropup-content {
     display: none;
     position: absolute;
     right: 0.2rem;
@@ -204,35 +204,35 @@ tr {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px 10px 10px 10px;
-  }
+}
 
-  /* Links inside the dropup */
-  .dropup-content a {
+/* Links inside the dropup */
+.dropup-content a {
     color: var(--bg);
     padding: 12px 16px;
     text-align: center;
     text-decoration: none;
     display: block;
-  }
+}
 
-  /* Change color of dropup links on hover */
-  .dropup-content a:hover {
-      background-color: var(--hover);
-      color: var(--text);
-      border-radius: 10px 10px 10px 10px;
-    }
+/* Change color of dropup links on hover */
+.dropup-content a:hover {
+    background-color: var(--hover);
+    color: var(--text);
+    border-radius: 10px 10px 10px 10px;
+}
 
-  /* Show the dropup menu on hover */
-  .dropup:hover .dropup-content {
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
     display: block;
-  }
+}
 
-  /* Change the background color of the dropup button when the dropup content is shown */
-  .dropup:hover .dropbtn {
+/* Change the background color of the dropup button when the dropup content is shown */
+.dropup:hover .dropbtn {
     background-color: var(--hover);
     color: var(--text);
     /* background-color: #2980B9; */
-  }
+}
 
 /* End of choose your cursor dropup */
 
