@@ -149,33 +149,31 @@ $(document).ready(function () {
     $('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
 })
 
-// Copy email and link other social media buttons
-$("#email").click(function(){
+// Enable email tooltip
+$(document).ready(function() {
+    $('#email').tooltip();
+});
 
-    copyToClipboard("physastr@ucalgary.ca");
-    $("#emailid").html("Email Copied to Clipboard");
+// Update tooltip when clicking email button
+$("#email").click(() => {
+    navigator.clipboard.writeText("physastr@ucalgary.ca");
+    $("#email").attr('data-original-title', 'Copied to clipboard!');
+    $("#email").tooltip('show');
+});
 
-})
+// Reset email tooltip text when mouse leaves
+$("#email").mouseleave(() => {
+    $("#email").attr('data-original-title', 'Click to copy email');
+    $("#email").tooltip('hide');
+});
 
-$("#instagram").click(function(){
-
+$("#instagram").click(() => {
     window.open("https://www.instagram.com/ucalgarypasa");
+});
 
-})
-
-$("#facebook").click(function(){
-
+$("#facebook").click(() => {
     window.open("https://www.fb.com/UCalgaryPASA");
-
-})
-
-function copyToClipboard(text) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val(text).select();
-    document.execCommand("copy");
-    $temp.remove();
-}
+});
 
 // Load content without refreshing
 
