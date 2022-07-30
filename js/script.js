@@ -1,3 +1,61 @@
+// ----- Theme Toggle -----
+
+// Get/Initialize local storage dark mode value
+let darkMode = localStorage.getItem("darkMode");
+if (darkMode === null) {
+    darkMode = "dark"
+    localStorage.setItem("darkMode", "dark");
+}
+
+// Define theme transitioning
+const themeTransition = () => {
+    document.documentElement.classList.add("transition");
+    window.setTimeout(() => {
+        document.documentElement.classList.remove("transition");
+    }, 300);
+};
+
+// Toggle on dark mode
+const enableDarkMode = () => {
+    localStorage.setItem("darkMode", "dark");
+
+    themeTransition();
+
+    document.documentElement.setAttribute("data-theme", "dark");
+    $("#night").addClass("hide");
+    $("#light").removeClass("hide");
+};
+
+// Toggle off dark mode
+const disableDarkMode = () => {
+    localStorage.setItem("darkMode", "light");
+
+    themeTransition();
+
+    document.documentElement.setAttribute("data-theme", "light");
+    $("#light").addClass("hide");
+    $("#night").removeClass("hide");
+};
+
+var checkbox = document.querySelector("input[name=theme]");
+
+// Activate dark mode
+if (darkMode === "dark") {
+    enableDarkMode();
+} else if (darkMode === "light") {
+    disableDarkMode();
+    checkbox.checked = true;
+}
+
+// Enable theme toggle button functionality
+checkbox.addEventListener("change", function() {
+    if (this.checked) 
+        disableDarkMode();
+    else 
+        enableDarkMode();
+});
+
+
 var pos = 0;
 var speed = 90;
 var typed = document.querySelector(".typed").innerText;
@@ -45,33 +103,7 @@ window.addEventListener("resize", fixsize);
 
 fixsize();
 
-// light night toggle
-
-var checkbox = document.querySelector('input[name=theme]');
-
-checkbox.addEventListener('change', function () {
-    if (this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
-        $('#light').addClass('hide');
-        $('#night').removeClass('hide')
-    } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
-        $('#night').addClass('hide');
-        $('#light').removeClass('hide')
-    }
-})
-
-let trans = () => {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 300)
-}
-
 // menu marker animation
-
 
 function menuChange() {
     if ($('#hori').is(':visible')) {
