@@ -132,54 +132,54 @@ if ($('#marker').length) {
 };
 menuChange();
 
+// ----- Cursor Selection -----
 
-function getCurrentFileName() {
+// Get root path
+const getCurrentFileName = () => {
     var pagePathName= window.location.pathname;
     return pagePathName.substring(pagePathName.lastIndexOf("/") + 1);
 }
-
-// Update CSS upon clicking new cursors
-var root = "../"
+var root = "../";
 if (getCurrentFileName().includes("index.html")) {
-    root = ""
+    root = "";
 }
 
-$(document).ready(function () {
-    $('#grogu').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/grogu_cursor.cur), auto`);
-    })
-})
+// CSS ids and associated file names
+const cursors = {
+    "#grogu": "grogu_cursor.cur",
+    "#cashew": "cashew_cursor.cur",
+    "#bigchung": "big_chungus_cursor.cur",
+    "#ugchung": "ugandan-chungus-cursor.cur",
+    "#amus": "among-us-pointer.cur",
+}
 
-$(document).ready(function () {
-    $('#cashew').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/cashew_cursor.cur), auto`);
-    })
-})
+// Add functionality to cursor selection
+for (let [key, value] of Object.entries(cursors)) {
+    $(key).click(() => {
+        $("body").css("cursor", `url(${root}assets/cursors/${value}), auto`);
+        localStorage.setItem("cursor", key);
+    });
+}
 
-$(document).ready(function () {
-    $('#bigchung').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/big_chungus_cursor.cur), auto`);
-    })
-})
+// Reset cursor to default
+$("#default").click(() => {
+    $("body").css({"cursor": ""});
+    localStorage.setItem("cursor", "default");
+});
 
-$(document).ready(function () {
-    $('#ugchung').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/ugandan-chungus-cursor.cur), auto`);
-    })
-})
+// Get/Initialize current cursor
+var cursor = localStorage.getItem("cursor");
+if (cursor === null) {
+    cursor = "#default";
+    localStorage.setItem("cursor", cursor);
+}
+if (cursor !== "default") {
+    $("body").css({"cursor": `url(${root}assets/cursors/${cursors[cursor]}), auto`});
+}
 
-$(document).ready(function () {
-    $('#amus').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/among-us-pointer.cur), auto`);
-    })
-})
-$(document).ready(function () {
-    $('#cureset').on('click', function () {
-        $('body').css({'cursor': ''});
-    })
-
-    $('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
-})
+$(document).ready(() => {
+    $("a[href*='https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget']").parent("div").remove();
+});
 
 // Copy email and link other social media buttons
 $("#email").click(function(){
