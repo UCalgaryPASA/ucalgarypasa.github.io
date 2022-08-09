@@ -1,3 +1,61 @@
+// ----- Theme Toggle -----
+
+// Get/Initialize local storage dark mode value
+let darkMode = localStorage.getItem("darkMode");
+if (darkMode === null) {
+    darkMode = "dark"
+    localStorage.setItem("darkMode", "dark");
+}
+
+// Define theme transitioning
+const themeTransition = () => {
+    document.documentElement.classList.add("transition");
+    window.setTimeout(() => {
+        document.documentElement.classList.remove("transition");
+    }, 300);
+};
+
+// Toggle on dark mode
+const enableDarkMode = () => {
+    localStorage.setItem("darkMode", "dark");
+
+    themeTransition();
+
+    document.documentElement.setAttribute("data-theme", "dark");
+    $("#night").addClass("hide");
+    $("#light").removeClass("hide");
+};
+
+// Toggle off dark mode
+const disableDarkMode = () => {
+    localStorage.setItem("darkMode", "light");
+
+    themeTransition();
+
+    document.documentElement.setAttribute("data-theme", "light");
+    $("#light").addClass("hide");
+    $("#night").removeClass("hide");
+};
+
+var checkbox = document.querySelector("input[name=theme]");
+
+// Activate dark mode
+if (darkMode === "dark") {
+    enableDarkMode();
+} else if (darkMode === "light") {
+    disableDarkMode();
+    checkbox.checked = true;
+}
+
+// Enable theme toggle button functionality
+checkbox.addEventListener("change", function() {
+    if (this.checked) 
+        disableDarkMode();
+    else 
+        enableDarkMode();
+});
+
+
 var pos = 0;
 var speed = 90;
 var typed = document.querySelector(".typed").innerText;
@@ -45,33 +103,7 @@ window.addEventListener("resize", fixsize);
 
 fixsize();
 
-// light night toggle
-
-var checkbox = document.querySelector('input[name=theme]');
-
-checkbox.addEventListener('change', function () {
-    if (this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
-        $('#light').addClass('hide');
-        $('#night').removeClass('hide')
-    } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
-        $('#night').addClass('hide');
-        $('#light').removeClass('hide')
-    }
-})
-
-let trans = () => {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 300)
-}
-
 // menu marker animation
-
 
 function menuChange() {
     if ($('#hori').is(':visible')) {
@@ -100,54 +132,54 @@ if ($('#marker').length) {
 };
 menuChange();
 
+// ----- Cursor Selection -----
 
-function getCurrentFileName() {
+// Get root path
+const getCurrentFileName = () => {
     var pagePathName= window.location.pathname;
     return pagePathName.substring(pagePathName.lastIndexOf("/") + 1);
 }
-
-// Update CSS upon clicking new cursors
-var root = "../"
+var root = "../";
 if (getCurrentFileName().includes("index.html")) {
-    root = ""
+    root = "";
 }
 
-$(document).ready(function () {
-    $('#grogu').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/grogu_cursor.cur), auto`);
-    })
-})
+// CSS ids and associated file names
+const cursors = {
+    "#grogu": "grogu_cursor.cur",
+    "#cashew": "cashew_cursor.cur",
+    "#bigchung": "big_chungus_cursor.cur",
+    "#ugchung": "ugandan-chungus-cursor.cur",
+    "#amus": "among-us-pointer.cur",
+}
 
-$(document).ready(function () {
-    $('#cashew').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/cashew_cursor.cur), auto`);
-    })
-})
+// Add functionality to cursor selection
+for (let [key, value] of Object.entries(cursors)) {
+    $(key).click(() => {
+        $("body").css("cursor", `url(${root}assets/cursors/${value}), auto`);
+        localStorage.setItem("cursor", key);
+    });
+}
 
-$(document).ready(function () {
-    $('#bigchung').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/big_chungus_cursor.cur), auto`);
-    })
-})
+// Reset cursor to default
+$("#default").click(() => {
+    $("body").css({"cursor": ""});
+    localStorage.setItem("cursor", "default");
+});
 
-$(document).ready(function () {
-    $('#ugchung').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/ugandan-chungus-cursor.cur), auto`);
-    })
-})
+// Get/Initialize current cursor
+var cursor = localStorage.getItem("cursor");
+if (cursor === null) {
+    cursor = "#default";
+    localStorage.setItem("cursor", cursor);
+}
+if (cursor !== "default") {
+    $("body").css({"cursor": `url(${root}assets/cursors/${cursors[cursor]}), auto`});
+}
 
-$(document).ready(function () {
-    $('#amus').on('click', function () {
-        $('body').css('cursor', `url(${root}assets/cursors/among-us-pointer.cur), auto`);
-    })
-})
-$(document).ready(function () {
-    $('#cureset').on('click', function () {
-        $('body').css({'cursor': ''});
-    })
-
-    $('a[href*="https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget"]').parent('div').remove();
-})
+$(document).ready(() => {
+    $("a[href*='https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget']").parent("div").remove();
+});
 
 // Enable email tooltip
 $(document).ready(function() {
