@@ -12,7 +12,7 @@ Source code for the University of Calgary's Physics and Astronomy Student Associ
 
 View the website: [https://pasa.website](https://pasa.website)  
 
-For quick development, an easy HTTP server to use is the build into python. Into the
+For quick development, an easy HTTP server to use is the one built into python. In the
 root directory, use:
 ```
 python -m http.server
