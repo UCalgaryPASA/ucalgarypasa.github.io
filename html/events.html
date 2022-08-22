@@ -25,10 +25,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
     <!-- Load local files -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contentpages.css">
-    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="../css/events.css">
+    <script type="text/javascript" src="../js/script.js" defer></script>
+    <script type="text/javascript" src="../js/events.js" defer></script>
 </head>
 
 <body>
@@ -136,10 +142,12 @@
                     <!-- formatCol helps with formatting -->
                     <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
                     <div class="stuff col-12 outline">
-                        <div class="con innerStuff">
-                            <div class="elfsight-app-b57bed61-de76-4d08-9d7a-df37016431c2"></div>
-                            <!-- Header acts as a space -->
-                            <h3> </h3>
+                        <div class="con innerStuff" id="event-window">
+                            <p class="event-heading">Upcoming Events</p>
+                            <div id="events"></div>              
+                
+                            <p class="event-heading">Past Events</p>
+                            <div id="past-events"></div>
                         </div>
                     </div>
                     <!-- formatCol helps with formatting -->
@@ -182,6 +190,8 @@
             </div>
         </div>
     </div>
+
+    <!-- <script src="../js/calendar.js"></script> -->
 
 </body>
 
