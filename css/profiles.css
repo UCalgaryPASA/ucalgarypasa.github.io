@@ -1,0 +1,87 @@
+/*
+    List of About Us profile images
+*/
+
+.avatar {
+    margin:  10px !important;
+    text-align: center;
+}
+
+.avatar span {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.avatar strong {
+    font-size: 1rem;
+}
+
+.av-img {
+    /* width: 100%; */
+    /* height is defined in javascript file to be same as width */
+    border: 2px solid white;
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 10%;
+}
+
+#emina {
+    background-image: url("../assets/media/emina.jpg");
+}
+
+#avneet {
+    background-image: url("../assets/media/avneet.jpeg");
+}
+
+#gabby {
+    background-image: url("../assets/media/gabby.jpg");
+}
+
+#abby {
+    background-image: url("../assets/media/abby.jpg");
+}
+
+#zach {
+    background-image: url("../assets/media/zach.jpg");
+}
+
+#elijah_t {
+    background-image: url("../assets/media/elijah_t.jpg");
+}
+
+#emma_2 {
+    background-image: url("../assets/media/emma_2.jpg");
+}
+
+#michaela {
+    background-image: url("../assets/media/michaela.jpg");
+}
+
+#ethan_t {
+    background-image: url("../assets/media/ethan_t.jpg");
+}
+
+#jonathan {
+    background-image: url("../assets/media/jonathan.jpg");
+}
+
+#andy {
+    background-image: url("../assets/media/andy.jpg");
+}
+
+#bigchungus {
+    background-image: url("../assets/media/bigchungus.jpg");
+}
+
+#emma {
+    background-image: url("../assets/media/emma.jpeg");
+}
+
+#mckinley {
+    background-image: url("../assets/media/mckinley.jpg");
+}
+
+#marcus {
+    background-image: url("../assets/media/marcus.png");
+}
+
