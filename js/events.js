@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.get("../data/events.yaml", null, (response) => {
         // Read events from YAML file
         var events = jsyaml.load(response);
-        console.log("Events", events);
+        // console.log("Events", events);
 
         // Sort events by date
         var groups = _.groupBy(events, function(event) { 
@@ -10,8 +10,8 @@ $(document).ready(function () {
         });
         days = _.sortBy(Object.keys(groups));
 
-        console.log("Groups:", groups);
-        console.log("Event Days:", days);
+        // console.log("Groups:", groups);
+        // console.log("Event Days:", days);
 
         // Define HTML ids
         const upcomingEvents = "#events";
@@ -24,7 +24,7 @@ $(document).ready(function () {
                 event.starttime = moment(event.start).format("h:mm a");
                 event.endtime = moment(event.end).format("h:mm a");
 
-                console.log(event);
+                // console.log(event);
 
                 // Append event details
                 if (event.title) {
