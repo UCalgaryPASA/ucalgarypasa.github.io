@@ -1,4 +1,4 @@
-@import "style.css"; 
+@import "style.css";
 
 .content .typed, .content .contentHeader, .content h1, .content h2, .content h3 {
     text-align: center;
@@ -12,14 +12,14 @@
     max-height: 100% !important;
     height: 100%;
     top: 80px;
-    text-align: justify !important;
+    /* text-align: justify !important; */
     /* responsive */
     padding: 0 30px;
 }
 
 .formatCol + div {
     border: 1px solid yellow;
-    
+
     position: absolute;
     top: 0;
     left: 0;
@@ -52,8 +52,10 @@
     );
 }
 
-#map{
-    align: center
+.map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contentHeader {
@@ -67,12 +69,6 @@
 hr {
     margin: 0 !important;
     background-color: var(--text);
-}
-
-
-.innerStuff {
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 .textstuff {
@@ -91,55 +87,45 @@ hr {
     background: white !important;
 }
 
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    
-    .innerStuff {
-        width: 540px !important;
-        margin: 0 auto !important;
-    }
-
-    .innerStuff p {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important
-    }
-
+/*
+ * On narrow devices we want the column to basically take up the whole
+ * screen width. Similarly we don't want 2 columns on narrow screens
+ */
+.innerStuff {
+    padding: 0 !important;
+    width: 95% !important;
+    margin: 0 auto !important;
 }
 
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    
-    .innerStuff {
-        width: 650px !important;
-        margin: 0 auto !important;
-    }
-
+.left_col {
+    margin:0 auto;
+    width: 100%;
 }
 
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-    .av-img {
-        /* width: 100%; */
-        /* height is defined in javascript file to be same as width */
-        border: 2px solid white;
-        border-radius: 50%;
-
-        /* why aren't you updatiiiing */
-    }
-    .innerStuff {
-            width: 900px !important;
-            margin: 0 auto !important;
-    }
+.right_col {
+    margin:0 auto;
+    width: 100%
 }
 
-/* // Extra large devices (large desktops, 1200px and up) */
+/*
+ * On large devices we can add margins to the content. Also allow side
+ * by side content
+ */
 @media (min-width: 1200px) {
 
     .innerStuff {
-        width: 1000px !important;
+        width: 80% !important;
         margin: 0 auto !important;
+    }
+
+    .left_col {
+        float: left;
+        width: 25%;
+    }
+
+    .right_col {
+        float: right;
+        width: 70%;
     }
 
 }
