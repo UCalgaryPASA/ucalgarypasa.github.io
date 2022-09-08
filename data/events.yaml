@@ -19,6 +19,16 @@
 # Though it's probably useful to keep it somewhat ordered.
 #
 
+- title: Cubby Brawl
+  start: "2022-09-23 17:00:00"
+  end: "2022-09-23 20:00:00"
+  venue: The Den
+
+- title: Games Night
+  start: "2022-09-14 17:00:00"
+  end: "2022-09-14 20:00:00"
+  venue: ST 058/060
+
 - title: PASA Graduate School Seminar and Q&A Panel
   start: "2022-08-24 18:00:00"
   venue: Zoom
