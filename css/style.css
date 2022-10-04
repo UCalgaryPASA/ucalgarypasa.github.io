@@ -234,6 +234,23 @@ tr {
     /* background-color: #2980B9; */
 }
 
+.btn {
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btn:hover {
+    background-color: var(--hover);
+    color: var(--text);
+}
+    
+
 /* End of choose your cursor dropup */
 
 /* daynight toggle */
