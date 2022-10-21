@@ -19,6 +19,15 @@
 # Though it's probably useful to keep it somewhat ordered.
 #
 
+- title: Halloween Games Night
+  start: "2022-10-28 17:00:00"
+  venue: ST 058/060
+
+- title: PASA Research Night
+  start: "2022-11-3 17:00:00"
+  end: "2022-11-3 19:30:00"
+  venue: ST 135
+
 - title: Fall LaTeX Seminar
   start: "2022-10-11 17:45:00"
   end: "2022-10-11 19:00:00"
