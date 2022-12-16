@@ -11,6 +11,7 @@
 Source code for the University of Calgary's Physics and Astronomy Student Association website. GitHub Pages is used as the hosting platform. Please submit an issue if any bugs are found.
 
 View the website: [https://pasa.website](https://pasa.website)  
+(Legacy link: [http://people.ucalgary.ca/~physastr/](http://people.ucalgary.ca/~physastr/)) 
 
 For quick development, an easy HTTP server to use is the one built into python. In the
 root directory, use:
