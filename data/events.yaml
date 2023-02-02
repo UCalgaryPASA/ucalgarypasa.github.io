@@ -19,6 +19,16 @@
 # Though it's probably useful to keep it somewhat ordered.
 #
 
+- title: PHAS/Meme Jeopardy
+  start: "2023-02-10 17:00:00"
+  end: "2023-02-10 20:00:00"
+  venue: ST 058/060
+
+- title: Winter LaTeX Seminar
+  start: "2023-02-02 17:00:00"
+  end: "2023-02-02 18:00:00"
+  venue: ST 026
+
 - title: PASA Secret Santa
   start: "2022-12-07 17:00:00"
   end: "2022-12-07 20:00:00"
