@@ -170,7 +170,7 @@ $("#default").click(() => {
 // Get/Initialize current cursor
 var cursor = localStorage.getItem("cursor");
 if (cursor === null) {
-    cursor = "#default";
+    cursor = "default";
     localStorage.setItem("cursor", cursor);
 }
 if (cursor !== "default") {
