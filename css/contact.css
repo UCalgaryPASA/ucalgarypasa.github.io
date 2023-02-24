@@ -1,0 +1,28 @@
+h3 {
+    text-align: left !important; 
+}
+
+.column {
+    float: center;
+    width: 33.33%;
+    overflow: auto;
+}
+
+.row {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media (max-width: 800px) {
+    .column {
+        width: 100%;
+    }
+}
