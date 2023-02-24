@@ -23,11 +23,17 @@
   start: "2023-02-10 17:00:00"
   end: "2023-02-10 20:00:00"
   venue: ST 058/060
+  summary: >
+    Join PASA for a night of PHAS/Meme Jeopardy! View the event on discord to sign
+    up solo or in partners. 
 
 - title: Winter LaTeX Seminar
   start: "2023-02-02 17:00:00"
   end: "2023-02-02 18:00:00"
   venue: ST 026
+  summary: >
+    Come join and learn how to use LaTeX to create more professional looking homework 
+    assignments, reports, and presentations.
 
 - title: PASA Secret Santa
   start: "2022-12-07 17:00:00"
