@@ -134,11 +134,11 @@
                         <div class="con innerStuff">
                             <p class="event-heading">Constitution</p>
                             <hr>
-                            <embed class="pdf" type="application/pdf" src="../assets/pdfs/constitution.pdf"></embed>
+                            <embed class="pdf" type="application/pdf" src="../assets/pdfs/constitution-compressed.pdf"></embed>
 
                             <p class="event-heading">Election Norms</p>
                             <hr>
-                            <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms.pdf"></embed>
+                            <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms-compressed.pdf"></embed>
                         </div>
                     </div>
                 </div>
@@ -179,6 +179,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        window.onload = function () { 
+            window.setTimeout(function () { 
+                var loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart; 
+                console.log('Load Time: ' + (loadTime/1000) + 's'); 
+            }, 0); 
+        };
+    </script>
 
 </body>
 
