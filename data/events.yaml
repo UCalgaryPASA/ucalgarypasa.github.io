@@ -19,6 +19,13 @@
 # Though it's probably useful to keep it somewhat ordered.
 #
 
+- title: Games Night
+  start: "2023-03-13 17:00:00"
+  end: "2023-03-13 20:00:00"
+  venue: ST 058/060
+  summary: >
+    A night of board games and other fun activities!
+
 - title: PHAS/Meme Jeopardy
   start: "2023-02-10 17:00:00"
   end: "2023-02-10 20:00:00"
