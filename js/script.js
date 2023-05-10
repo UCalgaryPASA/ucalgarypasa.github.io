@@ -55,42 +55,45 @@ checkbox.addEventListener("change", function() {
         enableDarkMode();
 });
 
+// ----- Typing Animation -----
+var title = document.querySelector(".typed");
+if (title !== null) {
+    var pos = 0;
+    var speed = 90;
+    var typed = title.innerText;
 
-var pos = 0;
-var speed = 90;
-var typed = document.querySelector(".typed").innerText;
-console.log(typed);
+    // empty the typed from span
+    title.innerText = '';
 
-// empty the typed from span
-document.querySelector(".typed").innerText = '';
-
-// typing function
-function type() {
-    if (pos < typed.length) {
-        document.querySelector('.typed').innerHTML += typed.charAt(pos);
-        pos++;
-        setTimeout(type, speed); // call this function again to type all letters
+    // typing function
+    function type() {
+        if (pos < typed.length) {
+            document.querySelector('.typed').innerHTML += typed.charAt(pos);
+            pos++;
+            setTimeout(type, speed); // call this function again to type all letters
+        }
+        // else {
+        //     setTimeout(erase, speed);
+        // }
     }
-    // else {
-    //     setTimeout(erase, speed);
-    // }
+
+    //start type
+    setTimeout(type, speed);
+
+    // erase function
+    function erase() {
+        if (pos >= 0) {
+            var temp = typed.substring(0, pos);
+            document.getElementById('typed').innerText = temp;
+            pos--;
+            setTimeout(erase, speed);
+        } else {
+            // start type again
+            setTimeout(type, speed);
+        }
+    }
 }
 
-//start type
-setTimeout(type, speed);
-
-// erase function
-function erase() {
-    if (pos >= 0) {
-        var temp = typed.substring(0, pos);
-        document.getElementById('typed').innerText = temp;
-        pos--;
-        setTimeout(erase, speed);
-    } else {
-        // start type again
-        setTimeout(type, speed);
-    }
-}
 
 // Make avatar height same as width
 
@@ -100,7 +103,6 @@ function fixsize() {
 }
 
 window.addEventListener("resize", fixsize);
-
 fixsize();
 
 // menu marker animation
@@ -170,7 +172,7 @@ $("#default").click(() => {
 // Get/Initialize current cursor
 var cursor = localStorage.getItem("cursor");
 if (cursor === null) {
-    cursor = "#default";
+    cursor = "default";
     localStorage.setItem("cursor", cursor);
 }
 if (cursor !== "default") {

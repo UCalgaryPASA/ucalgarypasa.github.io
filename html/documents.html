@@ -26,6 +26,8 @@
     <!-- Load local files -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contentpages.css">
+    <link rel="stylesheet" href="../css/profiles.css">
+    <link rel="stylesheet" href="../css/documents.css">
     <script src="../js/script.js" defer></script>
 </head>
 
@@ -110,8 +112,7 @@
             </div>
         </div>
 
-        <div id="horiline hide">
-        </div>
+        <div id="horiline hide"></div>
 
         <!-- Middle row -->
         <div class="updatecontent content container">
@@ -119,44 +120,29 @@
                 <!-- <div class="col-12 col-md-6 outline"> -->
                 <div class="col-12 outline">
                     <div class="contentHeader outline">
-                        <span class="typed">Contact Us</span>
+                        <!-- Don't forget funny comment to help with spacing -->
+                        <span class="typed">Documents</span><! --
+                    --><span class="type-cursor">|</span>
                     </div>
                 </div>
 
-                <!-- <div class="stuff col-12 col-md-6 outline"> -->
 
                 <div class="row outline justify-content-center align-items-center">
-                    <!-- formatCol helps with formatting -->
-                    <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
-                    <div class="stuff textstuff col-12 outline">
-                        <div class="innerStuff">
-                            <br>
-                            <br>
-
-                            <div class="left_col">
-                                <p>
-                                    <ul>
-                                        <li><i class="far fa-envelope"></i> <a href="mailto:physastr@ucalgary.ca">physastr@ucalgary.ca</a></li>
-                                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/ucalgarypasa/">@ucalgarypasa</a></li>
-                                        <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/UCalgaryPASA/">@UCalgaryPASA</a></li>
-                                    </ul>
-                                </p>
+                    <div class="stuff col-12 outline">
+                        <div class="con innerStuff">
+                            <div class="con innerStuff">
+                                <h3>Constitution</h3>
+                                <hr>
+                                <embed class="pdf" type="application/pdf" src="../assets/pdfs/constitution-compressed.pdf"></embed>
+                                
+                                <h3>Election Norms</h3>
+                                <hr>
+                                <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms-compressed.pdf"></embed>
+                                <h3></h3>
                             </div>
-                            <div class="right_col">
-                                <h3>PASA Room</h3>
-                                <p>
-                                    The PASA room is located in Science Theatres 058 and 060. When walking into ST from Science A, descend the flight of stairs into the basement. Walk straight and turn left at the second hallway. Proceed down that hallway for approximately 30 meters and the room will be on your left.<br /><br />
-                                    <img width=90% class="map" src="../assets/media/map.png" alt="Map">
-                                    <br />
-                                    <a href="https://ucalgary-gs.maps.arcgis.com/apps/webappviewer/index.html?id=2e1817b41cb64815a50f617593aabf4e">University of Calgary interactive room finder</a><br /><br />
-                                </p>
-                            </div>
-                            <br>
-                            <br>
+                            
                         </div>
                     </div>
-                    <!-- formatCol helps with formatting -->
-                    <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
                 </div>
             </div>
         </div>
@@ -194,8 +180,17 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <script>
+        window.onload = function () { 
+            window.setTimeout(function () { 
+                var loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart; 
+                console.log('Load Time: ' + (loadTime/1000) + 's'); 
+            }, 0); 
+        };
+    </script>
+
 </body>
 
 </html>
