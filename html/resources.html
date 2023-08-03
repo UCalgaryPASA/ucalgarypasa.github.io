@@ -1,241 +1,85 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASA</title>
-    <link rel="shortcut icon" type="image/jpg" href="../assets/media/favicon.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
-    <!-- Load packages -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Load local files -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/contentpages.css">
-    <link rel="stylesheet" href="../css/resources.css">
-    <script src="../js/script.js" defer></script>
-</head>
-
-<body>
-
-    <div class="master container">
-        <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div>
-        <!-- Top Row with Uni Logo and Night Mode -->
-        <div id="topBar" class="container top-container outline">
-            <div class="row top-row justify-content-between outline align-items-center text-center">
-                <div id="brand" class="col-4 outline text-left">
-                    <a href="https://science.ucalgary.ca/physics-astronomy"
-                        style="text-decoration: none; color: inherit;">
-                        <table>
-                            <tr class="outline">
-                                <td id="unilogo" rowspan="2" class="outline">
-                                    U
-                                </td>
-                                <td class="outline">
-                                    University of
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="outline">
-                                    Calgary
-                                </td>
-                            </tr>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div id="burger" class="col-2 outline text-center hamburger">
-                    <button class="navbar-toggler outline" data-toggle="collapse" data-target="#navLinks"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-                    </button>
-                </div>
-                <div class="col-4 outline">
-                    <table id="daynight" class="outline">
-                        <tr>
-                            <td class="outline">
-                                <input type="checkbox" id="toggle" name="theme" />
-                                <label for="toggle" class="outline"></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="light" class="outline">
-                                light mode
-                            </td>
-                            <td id="night" class="outline hide">
-                                night mode
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="dropdown" class="row justify-contents-center text-center hamburger">
-                <div id="navLinks" class="collapse navbar-collapse">
-                    <ul class="navbar-nav outline">
-                        <li class="nav-item">
-                            <a href="../index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="documents.html" class="nav-link">Documents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="events.html" class="nav-link">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="resources.html" class="nav-link">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="updatecontent content container">
+    <div class="row outline justify-content-center align-items-center">
+        <!-- <div class="col-12 col-md-6 outline"> -->
+        <div class="col-12 outline">
+            <div class="contentHeader outline">
+                <!-- Don't forget funny comment to help with spacing -->
+                <span class="typed">Resources</span>
             </div>
         </div>
 
-        <div id="horiline hide">
-        </div>
+        <!-- <div class="stuff col-12 col-md-6 outline"> -->
 
-        <!-- Middle row -->
-        <div class="updatecontent content container">
-            <div class="row outline justify-content-center align-items-center">
-                <!-- <div class="col-12 col-md-6 outline"> -->
-                <div class="col-12 outline">
-                    <div class="contentHeader outline">
-                        <!-- Don't forget funny comment to help with spacing -->
-                        <span class="typed">Resources</span>
-                    </div>
-                </div>
+        <div class="row outline justify-content-center align-items-center">
+            <!-- formatCol helps with formatting -->
+            <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
+            <div class="stuff textstuff col-12 outline">
+                <div class="innerStuff" id="content">
+                    <h3>Club Resources</h3>
+                    <hr>
+                    <br>
+                    <p style="text-align: justify;">
+                        <b>Club Room</b><br>
+                        PASA offers a space where members are welcome to come by to academically and socially connect with each other.
+                        Depending on executive availability, the club room is often open weekdays between roughly between 8am
+                        and 8pm (when people are around). Come find us in ST 058-060!
+                        <br><br><b>Mentorship</b><br>
+                        We offer a mentorship program for new students where individuals are paired with an experienced
+                        member of similar interests for personal and academic assistance. Please visit our Discord server
+                        or speak with an executive member for more information and the sign-up sheet.
+                        <br><br><b>Tutorial Night</b><br>
+                        We offer a weekly tutorial night for students to come by and get help with their courses. Hosted by executives
+                        E and Abby, this is a great opportunity ask questions about courses, labs, concepts, schedules, and more! It
+                        is available on discord and in the PASA club room. More details can be found in the announcements channel on our
+                        discord server.
+                    </p>
 
-                <!-- <div class="stuff col-12 col-md-6 outline"> -->
+                    <p>
+                        <b>Support Services</b><br>
+                        The University of Calgary also offers a variety of support services for students.
+                        <ul>
+                            <li>
+                                <a href="https://www.ucalgary.ca/wellness-services/services/mental-health-services">Mental Health Services</a>
+                            </li>
+                            <li>
+                                <a href="https://www.ucalgary.ca/wellness-services">Wellness Supports</a>
+                            </li>
+                            <li>
+                                <a href="https://ucalgary.ca/student-services/access">Student Accessibility Services</a>
+                            </li>
+                            <li>
+                                <a href="https://science.ucalgary.ca/current-students/undergraduate/undergraduate-science-centre">Undergraduate Science Center</a>
+                            </li>
+                        </ul>
+                    </p>
 
-                <div class="row outline justify-content-center align-items-center">
-                    <!-- formatCol helps with formatting -->
-                    <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
-                    <div class="stuff textstuff col-12 outline">
-                        <div class="innerStuff" id="content">
-                            <h3>Club Resources</h3>
-                            <hr>
-                            <br>
-                            <p style="text-align: justify;">
-                                <b>Club Room</b><br>
-                                PASA offers a space where members are welcome to come by to academically and socially connect with each other.
-                                Depending on executive availability, the club room is often open weekdays between roughly between 8am
-                                and 8pm (when people are around). Come find us in ST 058-060!
-                                <br><br><b>Mentorship</b><br>
-                                We offer a mentorship program for new students where individuals are paired with an experienced
-                                member of similar interests for personal and academic assistance. Please visit our Discord server
-                                or speak with an executive member for more information and the sign-up sheet.
-                                <br><br><b>Tutorial Night</b><br>
-                                We offer a weekly tutorial night for students to come by and get help with their courses. Hosted by executives
-                                E and Abby, this is a great opportunity ask questions about courses, labs, concepts, schedules, and more! It
-                                is available on discord and in the PASA club room. More details can be found in the announcements channel on our
-                                discord server.
-                            </p>
+                    <h3>Reach Out</h3>
+                    <hr>
+                    <br>
+                    <p>
+                        The anonymous survey below is for you to express concerns within the Physics and Astronomy department
+                        anonymously through PASA. Please remember that you are always welcome to reach out to the resources we
+                        suggest on your own if you are comfortable, but if you would like to remain anonymous and have PASA
+                        representatives speak on your behalf, you may use this form. You do not need to be a member of PASA
+                        to use this form!
+                    </p>
+                    <center>
+                    >> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdP3wQ7q1R2z8q5SaByh3ndSibIpGFtQlsWuyKdu7uMZC7COA/viewform">
+                        PASA Anonymous Survey
+                    </a> <<
+                    </center>
 
-                            <p>
-                                <b>Support Services</b><br>
-                                The University of Calgary also offers a variety of support services for students.
-                                <ul>
-                                    <li>
-                                        <a href="https://www.ucalgary.ca/wellness-services/services/mental-health-services">Mental Health Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.ucalgary.ca/wellness-services">Wellness Supports</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://ucalgary.ca/student-services/access">Student Accessibility Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://science.ucalgary.ca/current-students/undergraduate/undergraduate-science-centre">Undergraduate Science Center</a>
-                                    </li>
-                                </ul>
-                            </p>
-
-                            <h3>Reach Out</h3>
-                            <hr>
-                            <br>
-                            <p>
-                                The anonymous survey below is for you to express concerns within the Physics and Astronomy department
-                                anonymously through PASA. Please remember that you are always welcome to reach out to the resources we
-                                suggest on your own if you are comfortable, but if you would like to remain anonymous and have PASA
-                                representatives speak on your behalf, you may use this form. You do not need to be a member of PASA
-                                to use this form!
-                            </p>
-                            <center>
-                            >> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdP3wQ7q1R2z8q5SaByh3ndSibIpGFtQlsWuyKdu7uMZC7COA/viewform">
-                                PASA Anonymous Survey
-                            </a> <<
-                            </center>
-
-                            <br>
-                            To voice your concerns more broadly, please consider sending a survey response to the DGA and EDI
-                            committees to advocate for PHAS students.
-                            <center>
-                            >> <a href="https://forms.gle/HuyexNYeyPKEJ25s7">
-                                DGA and EDI Committee Feedback Survey
-                            </a> <<
-                            </center>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom container -->
-        <div id="bottom" class="container top-container">
-            <div class="row bottom-row justify-content-between align-items-center">
-                <div class="outline col text-left">
-                    <i id="facebook" class="fab fa-facebook"></i>
-                    <i id="instagram" class="fab fa-instagram"></i>
-                    <i id="email" title="Click to copy email" data-toggle="tooltip" class="far fa-envelope"></i>
-                </div>
-                <div id="cursor" class="outline col text-right">
-                    <div class="dropup">
-                        <button class="dropbtn">Choose your cursor</button>
-                        <div class="dropup-content">
-                            <a id="grogu" href="#" src=>
-                                <img href="#" src="../assets/cursors/grogu_cursor.png">
-                            </a>
-                            <a id="cashew" href="#" src=>
-                                <img href="#" src="../assets/cursors/cashew_cursor.png">
-                            </a>
-                            <a id="bigchung" href="#" src=>
-                                <img href="#" src="../assets/cursors/big_chungus_cursor.png">
-                            </a>
-                            <a id="ugchung" href="#" src=>
-                                <img href="#" src="../assets/cursors/ugandan-chungus-cursor.png">
-                            </a>
-                            <a id="amus" href="#" src=>
-                                <img href="#" src="../assets/cursors/among-us-pointer.png">
-                            </a>
-                            <a id="default" href="#">Reset</a>
-                        </div>
-                    </div>
+                    <br>
+                    To voice your concerns more broadly, please consider sending a survey response to the DGA and EDI
+                    committees to advocate for PHAS students.
+                    <center>
+                    >> <a href="https://forms.gle/HuyexNYeyPKEJ25s7">
+                        DGA and EDI Committee Feedback Survey
+                    </a> <<
+                    </center>
+                    <br>
                 </div>
             </div>
         </div>
     </div>
-
-</body>
-
-</html>
+</div>
