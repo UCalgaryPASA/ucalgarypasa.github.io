@@ -25,10 +25,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
     <!-- Load local files -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contentpages.css">
     <script src="js/script.js" defer></script>
+    <script src="js/events.js" defer></script>
 </head>
 
 <body>
@@ -91,22 +96,28 @@
                 <div id="navLinks" class="collapse navbar-collapse">
                     <ul class="navbar-nav outline">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <!-- <a href="index.html" class="nav-link">Home</a> -->
+                            <a href="?page=home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="html/about.html" class="nav-link">About Us</a>
+                            <!-- <a href="html/about.html" class="nav-link">About Us</a> -->
+                            <a href="?page=about" class="nav-link">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="html/documents.html" class="nav-link">Documents</a>
+                            <!-- <a href="html/documents.html" class="nav-link">Documents</a> -->
+                            <a href="?page=documents" class="nav-link">Documents</a>
                         </li>
                         <li class="nav-item">
-                            <a href="html/events.html" class="nav-link">Events</a>
+                            <!-- <a href="html/events.html" class="nav-link">Events</a> -->
+                            <a href="?page=events" class="nav-link">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="html/resources.html" class="nav-link">Resources</a>
+                            <!-- <a href="html/resources.html" class="nav-link">Resources</a> -->
+                            <a href="?page=resources" class="nav-link">Resources</a>
                         </li>
                         <li class="nav-item">
-                            <a href="html/contact.html" class="nav-link">Contact Us</a>
+                            <!-- <a href="html/contact.html" class="nav-link">Contact Us</a> -->
+                            <a href="?page=contact" class="nav-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -115,58 +126,9 @@
 
         <div id="horiline hide"></div>
 
-        <div id="updatecontent">
-            <!-- Middle row -->
-            <div id="middle" class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col text-center">
-                        <div id="welcome" class="type-div outline">
-                            <!-- the funny dual-line comment eliminates the whitespace between spans -->
-                            <!-- ALWAYS CHECK TO MAKE SURE IT'S FORMATTED CORRECTLY -->
-                            <span class="typed">Welcome to</span><! -- 
-                        --><span class="type-cursor"></span>
-                        </div>
-                    </div>
-                </div>
-                <div id="pasa" class="outline row align-items-center">
-                    <div class="col text-center">
-                        <span class="outline">PASA</span>
-                    </div>
-                </div>
-
-                <div id="pasa_small" class="outline row align-items-center">
-                    <div class="col text-center">
-                        <span class="outline">Physics and Astronomy Students' Association</span>
-                    </div>
-                </div>
-
-                <div id="hori" class="row justify-content-around">
-                    <div id="princmenu" class="col text-center">
-                        <nav>
-                            <div id="marker"></div>
-                            <a href="html/about.html" data-target="about2">About Us</a>
-                            <a href="html/documents.html" data-target="constitution">Documents</a>
-                            <a href="html/events.html" data-target="events">Events</a>
-                            <a href="html/resources.html" data-target="resources">Resources</a>
-                            <a href="html/contact.html" data-target="contact">Contact Us</a>
-                        </nav>
-                    </div>
-                </div>
-
-                <div id="" class="row justify-content-around">
-                    <div class="col text-center">
-                        <p id="front">
-                            <br>
-                            PASA is an academic and social club at the University of Calgary. Our primary focus is 
-                            enhancing the experience of physics and astrophysics undergraduate students.
-                            <br>
-                            <br>
-                            <b>Want to join?</b> Visit our <a href="html/contact.html">contact page</a> to see how!
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Middle row -->
+        <div id="main-content">
+            <!-- content from html/* directory will be loaded here -->
         </div>
 
         <!-- Bottom container -->
@@ -206,3 +168,47 @@
 <!-- The torch is now passed on to you. -->
 
 </html>
+
+<script>
+  $(document).ready(function() {
+
+    function matchUrlSearch(regex) {
+        return new RegExp(regex+"=([a-zA-Z0-9%]+)").exec(window.location.search);
+    }
+
+    function getUrlSearch(search) {
+        match = matchUrlSearch(search);
+        if (match) {
+            return match[1];
+        }
+    }
+
+    function replaceUrlSearch(search, replacement) {
+        match = matchUrlSearch(search);
+        if (match) {
+            startPos = search.length+match.index+1;
+            window.location.search = window.location.search.substring(0,startPos)
+                +replacement
+                +window.location.search.substring(startPos+match[1].length);
+        } else {
+            if (window.location.search) {
+                window.location.search += "&"+search+"="+replacement
+            } else {
+                window.location.search = "?"+search+"="+replacement
+            }
+        }
+    }
+    
+    // console.log(getUrlSearch("page"))
+    // console.log(getUrlSearch("other"))
+    // console.log(getUrlSearch("test2"))
+    // replaceUrlSearch("page", "home")
+    // replaceUrlSearch("other", "def")
+
+    if(window.location.search) {
+        $("#main-content").load("html/"+getUrlSearch("page")+".html");
+    } else {
+        $("#main-content").load("html/home.html");
+    }
+  });
+</script>
