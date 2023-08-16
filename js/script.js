@@ -1,3 +1,10 @@
+// ----- Set header and footer -----
+$(document).ready(function () {
+    $("#target-top").load("/html/common/top.html"); 
+    $("#target-bottom").load("/html/common/bottom.html"); 
+})
+
+
 // ----- Theme Toggle -----
 
 // Get/Initialize local storage dark mode value
