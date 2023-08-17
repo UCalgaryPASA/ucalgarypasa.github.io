@@ -1,34 +1,14 @@
+---
+# This tells Jekyll to compile tags
+---
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASA</title>
-    <link rel="shortcut icon" type="image/jpg" href="../assets/media/favicon.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
-    <!-- Load packages -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Load local files -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/contentpages.css">
-    <link rel="stylesheet" href="../css/profiles.css">
-    <link rel="stylesheet" href="../css/documents.css">
-    <script src="../js/script.js" defer></script>
+    {% include_relative common/head.html %}
+    <link rel="stylesheet" href="/css/profiles.css">
+    <link rel="stylesheet" href="/css/documents.css">
 </head>
 
 <body>
@@ -38,79 +18,7 @@
         <div id='stars2'></div>
         <div id='stars3'></div>
         <!-- Top Row with Uni Logo and Night Mode -->
-        <div id="topBar" class="container top-container outline">
-            <div class="row top-row justify-content-between outline align-items-center text-center">
-                <div id="brand" class="col-4 outline text-left">
-                    <a href="https://science.ucalgary.ca/physics-astronomy"
-                        style="text-decoration: none; color: inherit;">
-                        <table>
-                            <tr class="outline">
-                                <td id="unilogo" rowspan="2" class="outline">
-                                    U
-                                </td>
-                                <td class="outline">
-                                    University of
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="outline">
-                                    Calgary
-                                </td>
-                            </tr>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div id="burger" class="col-2 outline text-center hamburger">
-                    <button class="navbar-toggler outline" data-toggle="collapse" data-target="#navLinks"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-                    </button>
-                </div>
-                <div class="col-4 outline">
-                    <table id="daynight" class="outline">
-                        <tr>
-                            <td class="outline">
-                                <input type="checkbox" id="toggle" name="theme" />
-                                <label for="toggle" class="outline"></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="light" class="outline">
-                                light mode
-                            </td>
-                            <td id="night" class="outline hide">
-                                night mode
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="dropdown" class="row justify-contents-center text-center hamburger">
-                <div id="navLinks" class="collapse navbar-collapse">
-                    <ul class="navbar-nav outline">
-                        <li class="nav-item">
-                            <a href="../index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="documents.html" class="nav-link">Documents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="events.html" class="nav-link">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="resources.html" class="nav-link">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        {% include_relative common/top.html %}
 
         <div id="horiline hide"></div>
 
@@ -147,38 +55,7 @@
         </div>
 
         <!-- Bottom container -->
-        <div id="bottom" class="container top-container">
-            <div class="row bottom-row justify-content-between align-items-center">
-                <div class="outline col text-left">
-                    <i id="facebook" class="fab fa-facebook"></i>
-                    <i id="instagram" class="fab fa-instagram"></i>
-                    <i id="email" title="Click to copy email" data-toggle="tooltip" class="far fa-envelope"></i>
-                </div>
-                <div id="cursor" class="outline col text-right">
-                    <div class="dropup">
-                        <button class="dropbtn">Choose your cursor</button>
-                        <div class="dropup-content">
-                            <a id="grogu" href="#" src=>
-                                <img href="#" src="../assets/cursors/grogu_cursor.png">
-                            </a>
-                            <a id="cashew" href="#" src=>
-                                <img href="#" src="../assets/cursors/cashew_cursor.png">
-                            </a>
-                            <a id="bigchung" href="#" src=>
-                                <img href="#" src="../assets/cursors/big_chungus_cursor.png">
-                            </a>
-                            <a id="ugchung" href="#" src=>
-                                <img href="#" src="../assets/cursors/ugandan-chungus-cursor.png">
-                            </a>
-                            <a id="amus" href="#" src=>
-                                <img href="#" src="../assets/cursors/among-us-pointer.png">
-                            </a>
-                            <a id="default" href="#">Reset</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include_relative common/bottom.html %}
     </div>
 
     <script>
