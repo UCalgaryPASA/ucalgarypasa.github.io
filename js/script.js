@@ -1,199 +1,223 @@
+// function call $().load more than once and wait for all results
+function loadMultipleContent(urlMapping, callback) {
+    var loadedCount = 0;
+    
+    function loadComplete() {
+        loadedCount++;
+        if (loadedCount === Object.keys(urlMapping).length) {
+            callback();
+        }
+    }
+
+    for (let [element, url] of Object.entries(urlMapping)) {
+        $(element).load(url, loadComplete);
+    }
+}
+
+// ===================================== //
+// ========== ON READY SCRIPT ========== //
+// ===================================== //
+
 // ----- Set header and footer -----
-$(document).ready(function () {
-    $("#target-top").load("/html/common/top.html"); 
-    $("#target-bottom").load("/html/common/bottom.html"); 
-})
-
-
-// ----- Theme Toggle -----
-
-// Get/Initialize local storage dark mode value
-let darkMode = localStorage.getItem("darkMode");
-if (darkMode === null) {
-    darkMode = "dark"
-    localStorage.setItem("darkMode", "dark");
+const loadElements = {
+    "#target-top": "/html/common/top.html",
+    "#target-bottom": "/html/common/bottom.html"
 }
+$(document).ready(loadMultipleContent(loadElements, function () {
 
-// Define theme transitioning
-const themeTransition = () => {
-    document.documentElement.classList.add("transition");
-    window.setTimeout(() => {
-        document.documentElement.classList.remove("transition");
-    }, 300);
-};
+    // ----- Theme Toggle -----
 
-// Toggle on dark mode
-const enableDarkMode = () => {
-    localStorage.setItem("darkMode", "dark");
-
-    themeTransition();
-
-    document.documentElement.setAttribute("data-theme", "dark");
-    $("#night").addClass("hide");
-    $("#light").removeClass("hide");
-};
-
-// Toggle off dark mode
-const disableDarkMode = () => {
-    localStorage.setItem("darkMode", "light");
-
-    themeTransition();
-
-    document.documentElement.setAttribute("data-theme", "light");
-    $("#light").addClass("hide");
-    $("#night").removeClass("hide");
-};
-
-var checkbox = document.querySelector("input[name=theme]");
-
-// Activate dark mode
-if (darkMode === "dark") {
-    enableDarkMode();
-} else if (darkMode === "light") {
-    disableDarkMode();
-    checkbox.checked = true;
-}
-
-// Enable theme toggle button functionality
-checkbox.addEventListener("change", function() {
-    if (this.checked) 
-        disableDarkMode();
-    else 
-        enableDarkMode();
-});
-
-// ----- Typing Animation -----
-var title = document.querySelector(".typed");
-if (title !== null) {
-    var pos = 0;
-    var speed = 90;
-    var typed = title.innerText;
-
-    // empty the typed from span
-    title.innerText = '';
-
-    // typing function
-    function type() {
-        if (pos < typed.length) {
-            document.querySelector('.typed').innerHTML += typed.charAt(pos);
-            pos++;
-            setTimeout(type, speed); // call this function again to type all letters
-        }
-        // else {
-        //     setTimeout(erase, speed);
-        // }
+    // Get/Initialize local storage dark mode value
+    let darkMode = localStorage.getItem("darkMode");
+    if (darkMode === null) {
+        darkMode = "dark"
+        localStorage.setItem("darkMode", "dark");
     }
 
-    //start type
-    setTimeout(type, speed);
+    // Define theme transitioning
+    const themeTransition = () => {
+        document.documentElement.classList.add("transition");
+        window.setTimeout(() => {
+            document.documentElement.classList.remove("transition");
+        }, 300);
+    };
 
-    // erase function
-    function erase() {
-        if (pos >= 0) {
-            var temp = typed.substring(0, pos);
-            document.getElementById('typed').innerText = temp;
-            pos--;
-            setTimeout(erase, speed);
-        } else {
-            // start type again
-            setTimeout(type, speed);
+    // Toggle on dark mode
+    const enableDarkMode = () => {
+        localStorage.setItem("darkMode", "dark");
+
+        themeTransition();
+
+        document.documentElement.setAttribute("data-theme", "dark");
+        $("#night").addClass("hide");
+        $("#light").removeClass("hide");
+    };
+
+    // Toggle off dark mode
+    const disableDarkMode = () => {
+        localStorage.setItem("darkMode", "light");
+
+        themeTransition();
+
+        document.documentElement.setAttribute("data-theme", "light");
+        $("#light").addClass("hide");
+        $("#night").removeClass("hide");
+    };
+
+    // setup checkbox once it loads
+    // waitForElement("toggle").then((checkbox) => {
+        var checkbox = document.querySelector("input[name=theme]")
+        // Activate dark mode
+        if (darkMode === "dark") {
+            enableDarkMode();
+        } else if (darkMode === "light") {
+            disableDarkMode();
+            checkbox.checked = true;
+        }
+
+        // Enable theme toggle button functionality
+        checkbox.addEventListener("change", function() {
+            if (this.checked) 
+                disableDarkMode();
+            else 
+                enableDarkMode();
+        });
+    // });
+
+    // ----- Typing Animation -----
+    var title = document.querySelector(".typed");
+    if (title !== null) {
+        var pos = 0;
+        var speed = 90;
+        var typed = title.innerText;
+
+        // empty the typed from span
+        title.innerText = '';
+
+        // typing function
+        function type() {
+            if (pos < typed.length) {
+                document.querySelector('.typed').innerHTML += typed.charAt(pos);
+                pos++;
+                setTimeout(type, speed); // call this function again to type all letters
+            }
+            // else {
+            //     setTimeout(erase, speed);
+            // }
+        }
+
+        //start type
+        setTimeout(type, speed);
+
+        // erase function
+        function erase() {
+            if (pos >= 0) {
+                var temp = typed.substring(0, pos);
+                document.getElementById('typed').innerText = temp;
+                pos--;
+                setTimeout(erase, speed);
+            } else {
+                // start type again
+                setTimeout(type, speed);
+            }
         }
     }
-}
 
 
-// Make avatar height same as width
+    // Make avatar height same as width
 
-function fixsize() {
-    var cw = $('.av-img').width();
-    $('.av-img').css({ 'height': cw + 'px' });
-}
+    function fixsize() {
+        var cw = $('.av-img').width();
+        $('.av-img').css({ 'height': cw + 'px' });
+    }
 
-window.addEventListener("resize", fixsize);
-fixsize();
+    window.addEventListener("resize", fixsize);
+    fixsize();
 
-// menu marker animation
+    // menu marker animation
 
-function menuChange() {
-    if ($('#hori').is(':visible')) {
-        var marker = document.querySelector('#marker');
-        var item = document.querySelectorAll('nav a');
+    function menuChange() {
+        if ($('#hori').is(':visible')) {
+            var marker = document.querySelector('#marker');
+            var item = document.querySelectorAll('nav a');
 
-        function indicator(e) {
-            marker.style.left = e.offsetLeft + "px";
-            marker.style.width = e.offsetWidth + "px";
-        }
+            function indicator(e) {
+                marker.style.left = e.offsetLeft + "px";
+                marker.style.width = e.offsetWidth + "px";
+            }
 
-        item.forEach(link => {
-            link.addEventListener('mouseover', (e) => {
-                indicator(e.target);
+            item.forEach(link => {
+                link.addEventListener('mouseover', (e) => {
+                    indicator(e.target);
+                })
             })
-        })
+        }
     }
-}
 
-if ($('#marker').length) {
-    $(window).resize(function () {
-        marker.style.left = 0;
-        marker.style.width = 0;
-        menuChange();
+    if ($('#marker').length) {
+        $(window).resize(function () {
+            marker.style.left = 0;
+            marker.style.width = 0;
+            menuChange();
+        });
+    };
+    menuChange();
+
+    // ----- Cursor Selection -----
+
+    // Get root path
+    const getCurrentFileName = () => {
+        var pagePathName= window.location.pathname;
+        return pagePathName.substring(pagePathName.lastIndexOf("/") + 1);
+    }
+    var root = "../";
+    if (getCurrentFileName().includes("index.html")) {
+        root = "";
+    }
+
+    // CSS ids and associated file names
+    const cursors = {
+        "#grogu": "grogu_cursor.cur",
+        "#cashew": "cashew_cursor.cur",
+        "#bigchung": "big_chungus_cursor.cur",
+        "#ugchung": "ugandan-chungus-cursor.cur",
+        "#amus": "among-us-pointer.cur",
+    }
+
+    // Add functionality to cursor selection
+    for (let [key, value] of Object.entries(cursors)) {
+        $(key).click(() => {
+            $("body").css("cursor", `url(${root}assets/cursors/${value}), auto`);
+            localStorage.setItem("cursor", key);
+        });
+    }
+
+    // Reset cursor to default
+    $("#default").click(() => {
+        $("body").css({"cursor": ""});
+        localStorage.setItem("cursor", "default");
     });
-};
-menuChange();
 
-// ----- Cursor Selection -----
+    // Get/Initialize current cursor
+    var cursor = localStorage.getItem("cursor");
+    if (cursor === null) {
+        cursor = "default";
+        localStorage.setItem("cursor", cursor);
+    }
+    if (cursor !== "default") {
+        $("body").css({"cursor": `url(${root}assets/cursors/${cursors[cursor]}), auto`});
+    }
 
-// Get root path
-const getCurrentFileName = () => {
-    var pagePathName= window.location.pathname;
-    return pagePathName.substring(pagePathName.lastIndexOf("/") + 1);
-}
-var root = "../";
-if (getCurrentFileName().includes("index.html")) {
-    root = "";
-}
-
-// CSS ids and associated file names
-const cursors = {
-    "#grogu": "grogu_cursor.cur",
-    "#cashew": "cashew_cursor.cur",
-    "#bigchung": "big_chungus_cursor.cur",
-    "#ugchung": "ugandan-chungus-cursor.cur",
-    "#amus": "among-us-pointer.cur",
-}
-
-// Add functionality to cursor selection
-for (let [key, value] of Object.entries(cursors)) {
-    $(key).click(() => {
-        $("body").css("cursor", `url(${root}assets/cursors/${value}), auto`);
-        localStorage.setItem("cursor", key);
-    });
-}
-
-// Reset cursor to default
-$("#default").click(() => {
-    $("body").css({"cursor": ""});
-    localStorage.setItem("cursor", "default");
-});
-
-// Get/Initialize current cursor
-var cursor = localStorage.getItem("cursor");
-if (cursor === null) {
-    cursor = "default";
-    localStorage.setItem("cursor", cursor);
-}
-if (cursor !== "default") {
-    $("body").css({"cursor": `url(${root}assets/cursors/${cursors[cursor]}), auto`});
-}
-
-$(document).ready(() => {
-    $("a[href*='https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget']").parent("div").remove();
-});
-
-// Enable email tooltip
-$(document).ready(function() {
+    // Enable email tooltip
     $('#email').tooltip();
-});
+
+}));
+
+
+// ======================================= //
+// ========== ON OTHER TRIGGERS ========== //
+// ======================================= //
+
 
 // Update tooltip when clicking email button
 $("#email").click(() => {
