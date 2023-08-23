@@ -139,11 +139,15 @@ tr {
     transition: 0.1s;
 }
 
+#pasa_corner {
+    border-right: 0.1rem solid #FFF;
+    padding: 0 0.5rem 0 0;
+}
 
 #unilogo {
     font-family: "Icons", sans-serif;
     font-size: 2rem;
-    padding: 0 0.2rem 0 0;
+    padding: 0 0.2rem 0 0.5rem;
 }
 
 #burger {
@@ -373,8 +377,13 @@ label:active:after {
     100% { opacity: 1; }
 }
 
+#pasa_corner span {
+    font-family: "Nasa", sans-serif;
+    font-size: 2rem;
+}
+
 #pasa {
-    transform: translateY(-20px);
+    transform: translateY(-1rem);
 }
 
 #pasa span {
@@ -382,8 +391,12 @@ label:active:after {
     font-size: 4rem;
 }
 
+#pasa img {
+    height: 1em;
+}
+
 #pasa_small {
-    transform: translateY(-20px);
+    transform: translateY(-1rem);
 }
 
 #pasa_small span {
