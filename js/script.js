@@ -151,8 +151,6 @@ const cursors = {
     "#grogu": "grogu_cursor.cur",
     "#cashew": "cashew_cursor.cur",
     "#bigchung": "big_chungus_cursor.cur",
-    "#ugchung": "ugandan-chungus-cursor.cur",
-    "#amus": "among-us-pointer.cur",
 }
 
 // Add functionality to cursor selection
