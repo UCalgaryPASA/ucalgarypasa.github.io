@@ -174,8 +174,12 @@ tr {
 }
 
 #daynight label {
-    transform: translate(55%, 0px);
+    transform: translate(55%, 0);
     border: 2px solid var(--button);
+}
+
+#daynight td {
+    transform: translate(0, -25%);
 }
 
 /* Choose your cursor dropup */
@@ -275,7 +279,7 @@ input[type=checkbox]{
 label {
 	cursor: pointer;
 	text-indent: -9999px;
-	width: 2.0rem;
+	width: 2rem;
 	height: 1rem;
 	background: grey;
 	display: block;
@@ -287,7 +291,7 @@ label:after {
 	content: '';
 	position: absolute;
 	top: 0;
-	left: 0.12rem;
+	left: 0.04rem;
 	width: 0.78rem;
 	height: 0.78rem;
 	background: var(--button);
@@ -300,7 +304,7 @@ input:checked + label {
 }
 
 input:checked + label:after {
-	left: calc(100% - 0.12rem);
+    left: 100%;
 	transform: translateX(-100%);
 }
 
@@ -311,7 +315,7 @@ label:active:after {
 @media (min-width: 576px) {
     label:after {
         top: 0;
-        left: 0.12rem;
+        left: 0.04rem;
         width: 0.8rem;
         height: 0.8rem;
     }
@@ -320,7 +324,7 @@ label:active:after {
 @media (min-width: 768px) {
     label:after {
         top: 0;
-        left: 0.12rem;
+        left: 0.04rem;
         width: 0.82rem;
         height: 0.82rem;
     }
@@ -345,6 +349,7 @@ label:active:after {
 
 #navLinks a {
     color: var(--text);
+    padding: 0 1rem 1rem 0;
 }
 
 #navLinks a:hover {

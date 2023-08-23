@@ -5,18 +5,38 @@
             <i id="instagram" class="fab fa-instagram"></i>
             <i id="email" title="Click to copy email" data-toggle="tooltip" class="far fa-envelope"></i>
         </div>
-        <div id="cursor" class="outline col text-right">
-            <div class="dropup">
-                <button class="dropbtn">Choose your cursor</button>
-                <div class="dropup-content">
-                    <a id="grogu" href="#" src=><img href="#"
-                        src="/assets/cursors/grogu_cursor.png"></a>
-                    <a id="cashew" href="#" src=><img href="#"
-                        src="/assets/cursors/cashew_cursor.png"></a>
-                    <a id="bigchung" href="#" src=><img href="#"
-                        src="/assets/cursors/big_chungus_cursor.png"></a>
-                    <a id="default" href="#">
-                        Reset</a>
+        <div class="row bottom-row justify-content-between align-items-center">
+            <div class="outline text-right">
+                <table id="daynight" class="outline">
+                    <tr>
+                        <td class="outline">
+                            <input type="checkbox" id="toggle" name="theme" />
+                            <label for="toggle" class="outline"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="light" class="outline">
+                            light mode
+                        </td>
+                        <td id="night" class="outline hide">
+                            night mode
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="cursor" class="outline text-right">
+                <div class="dropup">
+                    <button class="dropbtn">Choose your cursor</button>
+                    <div class="dropup-content">
+                        <a id="grogu" href="#" src=><img href="#"
+                            src="/assets/cursors/grogu_cursor.png"></a>
+                        <a id="cashew" href="#" src=><img href="#"
+                            src="/assets/cursors/cashew_cursor.png"></a>
+                        <a id="bigchung" href="#" src=><img href="#"
+                            src="/assets/cursors/big_chungus_cursor.png"></a>
+                        <a id="default" href="#">
+                            Reset</a>
+                    </div>
                 </div>
             </div>
         </div>
