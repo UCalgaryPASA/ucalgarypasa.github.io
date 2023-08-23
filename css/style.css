@@ -133,7 +133,7 @@ tr {
     cursor: default;
 }
 
-#brand table:hover {
+#unibrand table:hover {
     color: var(--hover) !important;
     cursor: pointer;
     transition: 0.1s;
