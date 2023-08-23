@@ -2,19 +2,19 @@ h3 {
     text-align: left !important; 
 }
 
-.column {
+#contact .column {
     float: center;
     width: 33.33%;
     overflow: auto;
 }
 
-.row {
+#contact .row {
     width: 100% !important;
     margin: 0 auto !important;
 }
 
 /* Clear floats after the columns */
-.row:after {
+#contact .row:after {
     content: "";
     display: table;
     clear: both;
