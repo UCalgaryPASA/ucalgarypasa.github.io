@@ -151,8 +151,6 @@ const cursors = {
     "#grogu": "grogu_cursor.cur",
     "#cashew": "cashew_cursor.cur",
     "#bigchung": "big_chungus_cursor.cur",
-    "#ugchung": "ugandan-chungus-cursor.cur",
-    "#amus": "among-us-pointer.cur",
 }
 
 // Add functionality to cursor selection
@@ -179,10 +177,6 @@ if (cursor !== "default") {
     $("body").css({"cursor": `url(${root}assets/cursors/${cursors[cursor]}), auto`});
 }
 
-$(document).ready(() => {
-    $("a[href*='https://elfsight.com/event-calendar-widget/?utm_source=websites&utm_medium=clients&utm_content=event-calendar&utm_term=www.pasa.website&utm_campaign=free-widget']").parent("div").remove();
-});
-
 // Enable email tooltip
 $(document).ready(function() {
     $('#email').tooltip();
@@ -205,8 +199,8 @@ $("#instagram").click(() => {
     window.open("https://www.instagram.com/ucalgarypasa");
 });
 
-$("#facebook").click(() => {
-    window.open("https://www.fb.com/UCalgaryPASA");
+$("#twitter").click(() => {
+    window.open("https://www.twitter.com/UCalgaryPASA");
 });
 
 // Load content without refreshing
