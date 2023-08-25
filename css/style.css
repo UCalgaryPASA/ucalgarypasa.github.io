@@ -124,6 +124,17 @@ tr {
     line-height: 0.8;
 }
 
+#pasa_corner table:hover {
+    color: var(--hover) !important;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#pasa_corner td {
+    border-right: 0.1rem solid #FFF;
+    padding: 0 0.5rem 0 0;
+}
+
 #brand {
     padding: 0.2rem 0 !important;
     margin-left: 20px !important;
@@ -139,10 +150,6 @@ tr {
     transition: 0.1s;
 }
 
-#pasa_corner {
-    border-right: 0.1rem solid #FFF;
-    padding: 0 0.5rem 0 0;
-}
 
 #unilogo {
     font-family: "Icons", sans-serif;
