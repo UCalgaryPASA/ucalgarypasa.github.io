@@ -1,0 +1,30 @@
+{
+    "apiKey": "AIzaSyCR8XbTbZlCeXMivQ63dmQ1T2_16gWJ2lI",
+    "eventsCalendarId": "ea55fc2d571fc8a4717903a6ccc9b2bdbc85b7e38f81301f140865c3a6ff29f4",
+    "calendars": [
+        {
+            "name": "First Year Courses",
+            "id": "6f35ba7ac8607b051e85f8b040650590f47e6b116b8c766e41668a8d0079beca"
+        },
+        {
+            "name": "Second Year Courses",
+            "id": "31481e4e53055d32d2d8f06b7837c9997988c9d847931a75f88ee8496480fb22"
+        },
+        {
+            "name": "Third Year Courses",
+            "id": "ea878cb8db5b4b7770c90ee4b691ff037b09a3d53d6c702e9031666d92d77198"
+        },
+        {
+            "name": "Fourth Year Courses",
+            "id": "f80497c92664c0ff5e47a2781d6a95c5eab331b780ea9f8848410323b5e81f6c"
+        },
+        {
+            "name": "Graduate Courses",
+            "id": "1d36f31f47ce64ebb3029417b42551f443ea8adf0976ef58ad35563f9b9c02f2"
+        },
+        {
+            "name": "Other Courses",
+            "id": "b531015fc010891359cd1a82e7e6014a710970be11de8d5ef3888e6b9f2729df"
+        }
+    ]
+}

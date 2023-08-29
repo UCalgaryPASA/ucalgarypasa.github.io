@@ -277,13 +277,13 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
-input[type=checkbox]{
+#daynight input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
 
-label {
+#daynight label {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 2rem;
@@ -294,7 +294,7 @@ label {
 	position: relative;
 }
 
-label:after {
+#daynight label:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -306,21 +306,21 @@ label:after {
 	transition: 0.4s;
 }
 
-input:checked + label {
+#daynight input:checked + label {
 	background: rgb(49, 49, 49);
 }
 
-input:checked + label:after {
+#daynight input:checked + label:after {
     left: 100%;
 	transform: translateX(-100%);
 }
 
-label:active:after {
+#daynight label:active:after {
 	width: 1.3rem;
 }
 
 @media (min-width: 576px) {
-    label:after {
+    #daynight label:after {
         top: 0;
         left: 0.04rem;
         width: 0.8rem;
@@ -329,7 +329,7 @@ label:active:after {
 }
 
 @media (min-width: 768px) {
-    label:after {
+    #daynight label:after {
         top: 0;
         left: 0.04rem;
         width: 0.82rem;
