@@ -32,13 +32,13 @@ function updateCalendar() {
     // check each box
     checkboxes.forEach(function (element, i) {
         if (element.checkbox.checked) {
-            calendarUrl += `&src=${element.calendar}${encodeURIComponent('@')}group.calendar.google.com`
-            calendarUrl += `&color=${encodeURIComponent('#')}${colours[i]}`
-        }
+            calendarUrl += `&src=${element.calendar}${encodeURIComponent('@')}group.calendar.google.com`;
+            calendarUrl += `&color=${encodeURIComponent('#')}${colours[i]}`;
+        };
     });
 
     // update the iframe
-    $(calendar).attr({"src": calendarUrl})
+    $(calendar).attr({"src": calendarUrl});
 
 };
 
@@ -58,13 +58,13 @@ $(document).ready(function() {
                 var icalUrl = `https://calendar.google.com/calendar/ical/${element.id}@group.calendar.google.com/public/basic.ics`
 
                 // build checkbox
-                var checkbox = document.createElement("input")
-                checkbox.type = "checkbox"
-                checkbox.id = `calendar-toggle${i}`
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.id = `calendar-toggle${i}`;
                 if (i == 0) {   // the first element is always the events calendar
-                    checkbox.checked = "true"
-                }
-                checkbox.addEventListener("change", updateCalendar)
+                    checkbox.checked = "true";
+                };
+                checkbox.addEventListener("change", updateCalendar);
                 checkboxes.push({
                     checkbox: checkbox,
                     calendar: element.id
@@ -83,6 +83,10 @@ $(document).ready(function() {
                     navigator.clipboard.writeText(icalUrl);
                     $(`#ical${i}`).attr("data-original-title", "Copied to clipboard!");
                     $(`#ical${i}`).tooltip("show");
+                });
+                // make tooltip only appear the first time
+                $(`#ical${i}`).mouseleave(() => {
+                    $(`#ical${i}`).tooltip("disable");
                 });
             });
 
