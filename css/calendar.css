@@ -4,6 +4,7 @@
     height: 100%;
     flex-direction: column;
     overflow: hidden;
+    padding-top: 1rem;
 }
 
 #calendar iframe {
@@ -11,4 +12,20 @@
     border: none;
     margin: 0;
     padding: 0;
+}
+
+#calendar-info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#calendar-selection {
+    font-size: 0.8rem;
+}
+
+#calendar-selection #tr {
+    display: flex;
 }
