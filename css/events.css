@@ -2,11 +2,11 @@ time.dtstart {
     text-decoration: underline;
 }
 
-#events {
+#upcoming {
     text-align: center;
 }
 
-#past-events {
+#previous {
     text-align: center;
 }
 
