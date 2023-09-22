@@ -79,93 +79,119 @@ const sentenceRegex = new RegExp("(\\s*(?:[.!?]\\s+|(?:<br>\\s*)+))", "gim");
 function splitSentences(text) {
     var sentences = [];
     var lastIndex = 0;
+    // find each sentence delimiter
     while (match = sentenceRegex.exec(text)) {
         var sentence = text.slice(lastIndex, match.index+match.length);
+        if (sentence.endsWith("<b")) sentence += "r>";  // fix inconsistent match length
         addLength = sentence.length;
-        if (lastIndex+1 == match.index) {
+        if (lastIndex+1 == match.index) {   // extend sentence if two delimeters without space between
             sentence = sentences.pop() + sentence;
         };
         sentences.push(sentence);
         lastIndex += addLength;
     };
+    sentences.push(text.slice(lastIndex));   // add remaining text
     return sentences
 };
 
-function addEvents(divId, maxResults = 50, continuationToken = null) {
+// adds the results of an API call to the events page
+async function addEvents(divId, ascending = true, nextPageToken = null) {
     
     var apiQuery = "https://www.googleapis.com/calendar/v3/calendars/"
                  + `${eventsCalendarId}${encodeURIComponent('@')}group.calendar.google.com/events`
-                 + `?maxResults=${maxResults}`
-                 + "&orderBy=startTime"
+                 + "?orderBy=startTime"
                  + "&singleEvents=true"
-                 + `&timeMin=${now}`
                  + `&key=${apiKey}`;
+                //  + "&maxResults=5"   // for development purposes
     
-    if (continuationToken !== null) {
-        apiQuery += `&continuationToken=${continuationToken}`;
+    if (ascending) {
+        apiQuery += `&timeMin=${now}`;
+    } else {
+        apiQuery += `&timeMax=${now}`;
+    };
+    
+    if (nextPageToken !== null) {
+        apiQuery += `&pageToken=${nextPageToken}`;
     };
 
-    fetch(apiQuery)
-        .then((response) => response.json())
-        .then((data) => {
-            data.items.forEach(event => {
-                $(`<span><h5 class="event-title">${event.summary}</h4></span><br>`).appendTo(divId);
-                
-                var displayDatetime = "";
-                // all day event
-                if ("date" in event.start) {
-                    var startTz = getTimezone(event.start.date);
-                    var start = new Date(`${event.start.date} ${startTz}`);
-                    var endTz = getTimezone(event.start.date);
-                    var end = new Date(`${event.end.date} ${endTz}`);
-                    end.setDate(end.getDate() - 1);     // google sets all day events to end the next day
+    data = await (await fetch(apiQuery)).json();
+    data.items.forEach(event => {
 
-                    longspan = false;   // if event spans months or years
-                    if (start.getFullYear() != end.getFullYear()) {
-                        displayDatetime += `${month(start)} ${nth(start)}, ${start.getFullYear()} - `;
-                        longspan = true;
-                    } else if (start.getMonth() != end.getMonth()) {
-                        displayDatetime += `${month(start)} ${nth(start)} - `;
-                        longspan = true;
-                    };
-                    displayDatetime += `${month(end)} `;
-                    if (start.getDate() != end.getDate() && !longspan) {
-                        displayDatetime += `${nth(start)} - `;
-                    };
-                    displayDatetime += `${nth(end)}, ${end.getFullYear()}`;
+        // skip non-flagged events
+        if (!("extendedProperties" in event)) {
+            return;
+        };
+        if (!("displayOnWebsite" in event.extendedProperties.private)) {
+            return;
+        };
+        if (event.extendedProperties.private.displayOnWebsite == "false") {
+            return;
+        };
 
-                // hourly event
-                } else {
-                    var start = new Date(event.start.dateTime);
-                    var end = new Date(event.end.dateTime);
-                    displayDatetime = `${timeStr(start)} - ${timeStr(end)}, ${month(end)} ${nth(end)}, ${end.getFullYear()}`
-                };
+        var html = `<div>
+            <span><h5 class="event-title">${event.summary}</h4></span>
+            <br>
+            <span class="event-time">`;
+        
+        // all day event
+        if ("date" in event.start) {
+            var startTz = getTimezone(event.start.date);
+            var start = new Date(`${event.start.date} ${startTz}`);
+            var endTz = getTimezone(event.start.date);
+            var end = new Date(`${event.end.date} ${endTz}`);
+            end.setDate(end.getDate() - 1);     // google sets all day events to end the next day
 
-                $(`<span class="event-time">${displayDatetime}</span><br>`).appendTo(divId);
-                
-                if (event.location) {
-                    $(`<span class="event-loc">${event.location}</span><br>`).appendTo(divId);
-                };
+            longspan = false;   // if event spans months or years
+            if (start.getFullYear() != end.getFullYear()) {
+                html += `${month(start)} ${nth(start)}, ${start.getFullYear()} - `;
+                longspan = true;
+            } else if (start.getMonth() != end.getMonth()) {
+                html += `${month(start)} ${nth(start)} - `;
+                longspan = true;
+            };
+            html += `${month(end)} `;
+            if (start.getDate() != end.getDate() && !longspan) {
+                html += `${nth(start)} - `;
+            };
+            html += `${nth(end)}, ${end.getFullYear()}`;
 
-                if (event.description) {
-                    var description = event.description.replace(descriptionRegex, '');
-                    var sentences = splitSentences(description);
-                    
-                    if (sentences.length > 3) {
-                        var shortDesc = $(`<span>${sentences.slice(0,3).join('')}</span>`);
-                        shortDesc.appendTo(divId);
-                        var longDesc = $(`<span id="desc-${event.id}" style="display:none;">${sentences.slice(4,sentences.length).join(' ')}</span>`);
-                        longDesc.appendTo(divId);
-                        var dots = $(`<button id="dots-${event.id}" class="dots-button" onclick="updateDescription('${event.id}');">...(More)</button>`);
-                        dots.appendTo(divId);
-                    } else {
-                        $(`<span>${description}</span>`).appendTo(divId);
-                    }
-                };
-                
-                $("<br><br>").appendTo(divId)
-            });
+        // hourly event
+        } else {
+            var start = new Date(event.start.dateTime);
+            var end = new Date(event.end.dateTime);
+            html += `${timeStr(start)} - ${timeStr(end)}, ${month(end)} ${nth(end)}, ${end.getFullYear()}`
+        };
+
+        html += `</span><br>`;
+        
+        if (event.location) {
+            html += `<span class="event-loc">${event.location}</span><br>`;
+        };
+
+        if (event.description) {
+            var description = event.description.replace(descriptionRegex, '');
+            var sentences = splitSentences(description);
+            
+            if (sentences.length > 3) {
+                html += `<span>${sentences.slice(0,3).join('')}</span>`;
+                html += `<span id="desc-${event.id}" style="display:none;">${sentences.slice(3,sentences.length).join(' ')}</span>`;
+                html += `<button id="dots-${event.id}" class="dots-button" onclick="updateDescription('${event.id}');">...(More)</button>`;
+            } else {
+                html += `<span>${description}</span>`;
+            }
+        };
+        
+        html += "</div><br><br>";
+
+        if (ascending) {
+            $(html).appendTo(divId);
+        } else {
+            $(html).prependTo(divId);
+        }
+    
     });
+
+    return data.nextPageToken;
 
 };
 
@@ -184,14 +210,15 @@ function updateDescription(eventId) {
     };
 };
 
-$(document).ready(function() {
+$(document).ready(async function() {
 
     // load calendar data
-    fetch("/data/googleapi.json")
-        .then((response) => response.json())
-        .then((config) => {
-            apiKey = config.apiKey;
-            eventsCalendarId = config.eventsCalendarId;
-            addEvents(upcomingEvents);
-    });
+    config = await (await fetch("/data/googleapi.json")).json();
+    apiKey = config.apiKey;
+    eventsCalendarId = config.eventsCalendarId;
+
+    // display events
+    var nextPageToken = null
+    while (nextPageToken = await addEvents(upcomingEvents, true, nextPageToken));
+    while (nextPageToken = await addEvents(pastEvents, false, nextPageToken));
 });
