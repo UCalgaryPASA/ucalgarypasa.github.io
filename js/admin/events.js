@@ -1,3 +1,7 @@
+// relevant API docs:
+//   https://developers.google.com/identity/oauth2/web/reference/js-reference
+//   https://developers.google.com/calendar/api/v3/reference/events/update
+
 var clientId;
 var eventsCalendarId;
 
