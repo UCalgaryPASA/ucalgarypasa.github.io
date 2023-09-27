@@ -1,6 +1,6 @@
 // element references
-calendarSelection = "#calendar-selection";
-calendar = "#calendar-frame";
+const calendarSelection = "#calendar-selection";
+const calendar = "#calendar-frame";
 
 // define colours for each calendar
 colours = [
@@ -19,7 +19,7 @@ checkboxes = [];    // stores the checkbox elements with the corresponding calen
 function updateCalendar() {
 
     // constant base url
-    calendarUrl = "https://calendar.google.com/calendar/embed"
+    var calendarUrl = "https://calendar.google.com/calendar/embed"
                     + "?wkst=1"             // start week on sunday
                     + `&bgcolor=${encodeURIComponent('#')}E3E9FF`  // frame same colour as interior
                     + `&ctz=America${encodeURIComponent('/')}Edmonton`     // timezone

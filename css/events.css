@@ -2,14 +2,44 @@ time.dtstart {
     text-decoration: underline;
 }
 
-#events {
+#upcoming {
     text-align: center;
 }
 
-#past-events {
+#previous {
     text-align: center;
 }
 
 #event-window {
     margin-top: 2% !important;
+}
+
+.event-title {
+    font-weight: bold;
+    margin-bottom: -1rem;
+}
+
+.event-time {
+    font-style: italic;
+}
+
+.event-loc {
+    font-style: italic;
+}
+
+.event-desc {
+    margin-top: 0.5rem;
+}
+
+.dots-button {
+    background: none;
+    border: none;
+    outline: none !important;
+    padding: 0;
+    margin: 0;
+    margin-left: .5em;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
 }

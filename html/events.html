@@ -7,10 +7,6 @@
 
 <head>
     {% include_relative common/head.html %}
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     
     <link rel="stylesheet" href="/css/events.css">
     <script type="text/javascript" src="/js/events.js" defer></script>
@@ -47,15 +43,15 @@
                     <div class="stuff col-12 outline">
                         <div class="con innerStuff">
                             <div class="con innerStuff" id="event-window">
-                                <p class="event-heading">Upcoming Events</p>
+                                <p class="event-heading">Upcoming</p>
                                 <hr>
                                 <br>
-                                <div id="events"></div>
+                                <div id="upcoming"></div>
 
-                                <p class="event-heading">Past Events</p>
+                                <p class="event-heading">Previous</p>
                                 <hr>
                                 <br>
-                                <div id="past-events"></div>
+                                <div id="previous"></div>
                             </div>
                         </div>
                     </div>
