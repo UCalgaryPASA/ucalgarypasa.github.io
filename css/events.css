@@ -43,25 +43,3 @@ time.dtstart {
     font: inherit;
     text-decoration: underline;
 }
-
-
-/* THE FOLLOWING IS TEMPORARY AND SHOULD BE REMOVED ON 2023-09-29 */
-img {
-    /*max-width: 100%; /* Make sure the image doesn't exceed the width of its container */
-    /*max-height: 75%; /* Limit the image's height to 75% of its container */
-    height: 75%; /* Allow the image's height to adjust based on the aspect ratio */
-    width: auto; /* Allow the image's width to adjust based on the aspect ratio */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Media query to detect the aspect ratio */
-@media (max-aspect-ratio: 4/3) {
-    img {
-        /*max-width: 100%;
-        /*max-height: none; /* Remove the height limit for wider aspect ratios */
-        width: 100%;
-        height: auto;
-    }
-}
