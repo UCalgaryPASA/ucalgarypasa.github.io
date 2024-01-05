@@ -9,9 +9,22 @@
     {% include_relative common/head.html %}
     <link rel="stylesheet" href="/css/profiles.css">
     <link rel="stylesheet" href="/css/documents.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs"
+        crossorigin="anonymous"></script> -->
+        <!-- <script type="module">
+            import pdfjsDist from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/+esm'
+            </script> -->
 </head>
 
 <body>
+
+    <div id="overlay" onclick="off()" title="Close">
+        <div class="con innerStuff">
+            <!-- <embed id="pdf" class="pdf" type="application/pdf" src="/assets/pdfs/constitution-compressed.pdf"></embed> -->
+            <iframe id="pdf"></iframe>
+        </div>
+    </div>
 
     <div class="master container">
         <div id='stars'></div>
@@ -40,11 +53,12 @@
                             <div class="con innerStuff">
                                 <h3>Constitution</h3>
                                 <hr>
-                                <embed class="pdf" type="application/pdf" src="../assets/pdfs/constitution-compressed.pdf"></embed>
-
+                                <!-- <embed class="pdf" type="application/pdf" src="https://drive.google.com/viewer?embedded=true&url=https://pasa.website/assets/pdfs/constitution-compressed.pdf"></embed> -->
+                                <button onclick="on('constitution-compressed')">Turn on overlay effect</button>
                                 <h3>Election Norms</h3>
                                 <hr>
-                                <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms-compressed.pdf"></embed>
+                                <!-- <embed class="pdf" type="application/pdf" src="../assets/pdfs/elecnorms-compressed.pdf"></embed> -->
+                                <iframe id="pdf-js-viewer" src="../assets/pdfs/elecnorms-compressed.pdf" title="webviewer" frameborder="0" width="100%" height="600"></iframe>
                                 <h3></h3>
                             </div>
 
@@ -59,12 +73,18 @@
     </div>
 
     <script>
-        window.onload = function () {
-            window.setTimeout(function () {
-                var loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-                console.log('Load Time: ' + (loadTime/1000) + 's');
-            }, 0);
-        };
+        function on(name) {
+            const overlay = document.getElementById("overlay")
+            overlay.style.display = "block";
+
+            const viewer = document.getElementById("pdf")
+            viewer.src = `/assets/resources/pdfjs-4.0.379-dist/web/viewer.html?file=${window.location.origin}/assets/pdfs/${name}.pdf`
+            viewer.height = overlay.clientHeight*0.95
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
     </script>
 
 </body>
