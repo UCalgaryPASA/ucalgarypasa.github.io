@@ -8,9 +8,17 @@
 <head>
     {% include_relative common/head.html %}
     <link rel="stylesheet" href="/css/resources.css">
+
+    <script type="text/javascript" src="/js/resources.js" defer></script>
 </head>
 
 <body>
+
+    <div id="overlay" onclick="hidePDF()" title="Close">
+        <div class="con innerStuff">
+            <iframe id="pdf"></iframe>
+        </div>
+    </div>
 
     <div class="master container">
         <div id='stars'></div>
@@ -74,6 +82,13 @@
                                     </li>
                                 </ul>
                             </p>
+
+                            <h3>Club Documents</h3>
+                            <hr>
+                            <br>
+                            <!-- <div id="documents"></div> -->
+                            <!-- <table id="documents-table"></table> -->
+                            <ul id="documents-list"></ul>
 
                             <h3>Reach Out</h3>
                             <hr>

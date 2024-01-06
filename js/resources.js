@@ -11,7 +11,7 @@ function hidePDF() {
     document.getElementById("overlay").style.display = "none";
 };
 
-const documentArea = "#content";
+const documentArea = "#documents-list";
 
 const pdfs = [
     {
@@ -25,12 +25,12 @@ const pdfs = [
 ]
 
 $(document).ready(function() {
-    pdfs.forEach(pdf => {
-        html = `<div>
-            <h3>${pdf.display}</h3>
-            <hr>
-            <button onclick="showPDF('${pdf.file}');">Show PDF</button>
-        </div>`;
+    pdfs.forEach(function(pdf, i) {
+        html = `<li><a href="#" id="pdfbutton${i}">${pdf.display}</a></li>`
         $(html).appendTo(documentArea);
+        
+        $(`#pdfbutton${i}`).click(() => {
+            showPDF(pdf.file);
+        });
     });
 });
