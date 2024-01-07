@@ -1978,9 +1978,9 @@ class DefaultExternalServices {
   static createPreferences() {
     throw new Error("Not implemented: createPreferences");
   }
-  static async createL10n() {
-    throw new Error("Not implemented: createL10n");
-  }
+  // static async createL10n() {
+  //   // throw new Error("Not implemented: createL10n");
+  // }
   static createScripting() {
     throw new Error("Not implemented: createScripting");
   }
@@ -2064,13 +2064,6 @@ const PDFViewerApplication = {
     }
     if (mode) {
       document.documentElement.classList.add(mode);
-    }
-    l10nPromise = this.externalServices.createL10n();
-    this.l10n = await l10nPromise;
-    document.getElementsByTagName("html")[0].dir = this.l10n.getDirection();
-    this.l10n.translate(appConfig.appContainer || document.documentElement);
-    if (this.isViewerEmbedded && _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("externalLinkTarget") === _pdf_link_service_js__WEBPACK_IMPORTED_MODULE_4__.LinkTarget.NONE) {
-      _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.set("externalLinkTarget", _pdf_link_service_js__WEBPACK_IMPORTED_MODULE_4__.LinkTarget.TOP);
     }
     await this._initializeViewerComponents();
     this.bindEvents();
@@ -4860,10 +4853,9 @@ __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 /* harmony import */ var _app_options_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8961);
 /* harmony import */ var _preferences_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(216);
 /* harmony import */ var _download_manager_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4397);
-/* harmony import */ var _genericl10n_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(450);
 /* harmony import */ var _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9170);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_app_js__WEBPACK_IMPORTED_MODULE_0__, _download_manager_js__WEBPACK_IMPORTED_MODULE_3__, _genericl10n_js__WEBPACK_IMPORTED_MODULE_4__, _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__]);
-([_app_js__WEBPACK_IMPORTED_MODULE_0__, _download_manager_js__WEBPACK_IMPORTED_MODULE_3__, _genericl10n_js__WEBPACK_IMPORTED_MODULE_4__, _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_app_js__WEBPACK_IMPORTED_MODULE_0__, _download_manager_js__WEBPACK_IMPORTED_MODULE_3__, _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__]);
+([_app_js__WEBPACK_IMPORTED_MODULE_0__, _download_manager_js__WEBPACK_IMPORTED_MODULE_3__, _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4889,90 +4881,14 @@ class GenericExternalServices extends _app_js__WEBPACK_IMPORTED_MODULE_0__.Defau
   static createPreferences() {
     return new GenericPreferences();
   }
-  static async createL10n() {
-    return new _genericl10n_js__WEBPACK_IMPORTED_MODULE_4__.GenericL10n(_app_options_js__WEBPACK_IMPORTED_MODULE_1__.AppOptions.get("locale"));
-  }
+  // static async createL10n() {
+  //   return new _genericl10n_js__WEBPACK_IMPORTED_MODULE_4__.GenericL10n(_app_options_js__WEBPACK_IMPORTED_MODULE_1__.AppOptions.get("locale"));
+  // }
   static createScripting() {
     return new _generic_scripting_js__WEBPACK_IMPORTED_MODULE_5__.GenericScripting(_app_options_js__WEBPACK_IMPORTED_MODULE_1__.AppOptions.get("sandboxBundleSrc"));
   }
 }
 _app_js__WEBPACK_IMPORTED_MODULE_0__.PDFViewerApplication.externalServices = GenericExternalServices;
-
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 450:
-/***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   GenericL10n: () => (/* binding */ GenericL10n)
-/* harmony export */ });
-/* harmony import */ var fluent_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8759);
-/* harmony import */ var fluent_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8275);
-/* harmony import */ var pdfjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1869);
-/* harmony import */ var _l10n_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4065);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([pdfjs_lib__WEBPACK_IMPORTED_MODULE_2__]);
-pdfjs_lib__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
-
-
-
-class GenericL10n extends _l10n_js__WEBPACK_IMPORTED_MODULE_3__.L10n {
-  constructor(lang) {
-    super({
-      lang
-    });
-    this._setL10n(new fluent_dom__WEBPACK_IMPORTED_MODULE_1__.DOMLocalization([], GenericL10n.#generateBundles.bind(GenericL10n, "en-us", this.getLanguage())));
-  }
-  static async *#generateBundles(defaultLang, baseLang) {
-    const {
-      baseURL,
-      paths
-    } = await this.#getPaths();
-    const langs = [baseLang];
-    if (defaultLang !== baseLang) {
-      const shortLang = baseLang.split("-", 1)[0];
-      if (shortLang !== baseLang) {
-        langs.push(shortLang);
-      }
-      langs.push(defaultLang);
-    }
-    for (const lang of langs) {
-      const bundle = await this.#createBundle(lang, baseURL, paths);
-      if (bundle) {
-        yield bundle;
-      }
-    }
-  }
-  static async #createBundle(lang, baseURL, paths) {
-    const path = paths[lang];
-    if (!path) {
-      return null;
-    }
-    const url = new URL(path, baseURL);
-    const text = await (0,pdfjs_lib__WEBPACK_IMPORTED_MODULE_2__.fetchData)(url, "text");
-    const resource = new fluent_bundle__WEBPACK_IMPORTED_MODULE_0__.FluentResource(text);
-    const bundle = new fluent_bundle__WEBPACK_IMPORTED_MODULE_0__.FluentBundle(lang);
-    const errors = bundle.addResource(resource);
-    if (errors.length) {
-      console.error("L10n errors", errors);
-    }
-    return bundle;
-  }
-  static async #getPaths() {
-    const {
-      href
-    } = document.querySelector(`link[type="application/l10n"]`);
-    const paths = await (0,pdfjs_lib__WEBPACK_IMPORTED_MODULE_2__.fetchData)(href, "json");
-    return {
-      baseURL: href.replace(/[^/]*$/, "") || "./",
-      paths
-    };
-  }
-}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -5666,7 +5582,6 @@ class PDFDocumentProperties {
     eventBus._on("rotationchanging", evt => {
       this._pagesRotation = evt.pagesRotation;
     });
-    this._isNonMetricLocale = NON_METRIC_LOCALES.includes(l10n.getLanguage());
   }
   async open() {
     await Promise.all([this.overlayManager.open(this.dialog), this._dataAvailableCapability.promise]);
