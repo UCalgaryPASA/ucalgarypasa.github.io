@@ -1,3 +1,6 @@
+const documentArea = "#documents-list";
+const pdfCloseButton = "#closeViewer";
+
 function showPDF(name) {
     const overlay = document.getElementById("overlay");
     overlay.style.display = "block";
@@ -5,13 +8,17 @@ function showPDF(name) {
     const viewer = document.getElementById("pdf");
     viewer.src = `/assets/resources/pdfjs-4.0.379-dist/web/viewer.html?file=${window.location.origin}/assets/pdfs/${name}`;
     viewer.height = overlay.clientHeight*0.95;
+
+    $(pdfCloseButton).ready(function() {
+        $(pdfCloseButton).click(() => {
+            console.log("click")
+        })
+    })
 }
 
 function hidePDF() {
     document.getElementById("overlay").style.display = "none";
 };
-
-const documentArea = "#documents-list";
 
 const pdfs = [
     {
