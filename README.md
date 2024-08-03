@@ -13,8 +13,8 @@ Source code for the University of Calgary's Physics and Astronomy Student Associ
 View the website: [https://pasa.website](https://pasa.website)  
 (Legacy link: [http://people.ucalgary.ca/~physastr/](http://people.ucalgary.ca/~physastr/)) 
 
-For quick development, an easy HTTP server to use is the one built into python. In the
-root directory, use:
+[Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll), the static site generator used by GitHub Pages, is needed to test the website locally. In the
+root directory, run:
 ```
-python -m http.server
+jekyll serve
 ```
