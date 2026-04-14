@@ -79,11 +79,15 @@
 }
 
 #webmaster2 {
-    background-image: url("../assets/media/webmaster2.png");
+    background-image: url("../assets/media/Webmaster2.png");
 }
 
 #webmaster3 {
     background-image: url("../assets/media/webmaster3.jpg");
+}
+
+#webmasterph {
+    background-image: url("../assets/media/WebMasterPlaceHolder.png");
 }
 
 #rep-phys {
