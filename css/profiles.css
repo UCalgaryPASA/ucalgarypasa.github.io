@@ -25,6 +25,11 @@
     margin-bottom: 10%;
 }
 
+.no-border {
+    /* height is defined in javascript file to be same as width */
+    border: none;
+}
+
 #president {
     background-image: url("../assets/media/president.jpg");
 }
@@ -74,7 +79,7 @@
 }
 
 #webmaster2 {
-    background-image: url("../assets/media/webmaster2.jpg");
+    background-image: url("../assets/media/webmaster2.png");
 }
 
 #webmaster3 {
