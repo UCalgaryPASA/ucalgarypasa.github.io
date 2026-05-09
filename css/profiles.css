@@ -17,7 +17,7 @@
 }
 
 .av-img {
-    /* width: 100%; */
+    /* width: 100%;  */
     /* height is defined in javascript file to be same as width */
     border: 2px solid white;
     border-radius: 50%;
@@ -96,4 +96,8 @@
 
 #rep-asph {
     background-image: url("../assets/media/rep-asph.jpg");
+}
+
+#placeholder {
+    background-image: url("../assets/media/placeholder.png");
 }
