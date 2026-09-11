@@ -7,8 +7,11 @@
 
 <head>
     {% include_relative common/head.html %}
-    <link rel="stylesheet" href="/css/calendar.css">
-    <script type="text/javascript" src="/js/calendar.js" defer></script>
+        <link rel="stylesheet" href="/css/calendar.css">
+        <link rel="stylesheet" href="/css/events.css">
+        <script type="text/javascript" src="/js/calendar.js" defer></script>
+        <script src="/js/events.js" defer></script>
+
 </head>
 
 <body>
@@ -35,22 +38,50 @@
 
                 <div class="row outline justify-content-center align-items-center">
                     <div class="stuff col-12 outline">
-                        <div class="con innerStuff">
-                            <div class="con innerStuff" id="event-window">
-                                <div id="calendar">
-                                    <iframe id="calendar-frame" style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-                                </div>
-                                <br>
-                                <br>
-                                <div id="calendar-info">
-                                    <table id="calendar-selection"></table>
-                                </div>
+
+                        <!-- Calendar -->
+                        <div class="con innerStuff" id="calendar-window">
+                            <div id="calendar">
+                                <iframe
+                                    id="calendar-frame"
+                                    style="border-width:0"
+                                    width="100%"
+                                    height="100%"
+                                    frameborder="0"
+                                    scrolling="no">
+                                </iframe>
+                            </div>
+
+                            <br>
+                            <br>
+
+                            <div id="calendar-info">
+                                <table id="calendar-selection"></table>
                             </div>
                         </div>
+
+                        <!-- Events -->
+                        <div class="con innerStuff" id="event-window">
+                            <p class="event-heading">Upcoming</p>
+                            <hr>
+                            <br>
+
+                            <div id="upcoming"></div>
+
+                            <p class="event-heading">Previous</p>
+                            <hr>
+                            <br>
+
+                            <div id="previous"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+        <!-- formatCol helps with formatting -->
+        <!-- <div class="col-1 formatCol outline hide"><p>TESTING</p></div> -->
+    </div>
 
         <!-- Bottom container (Footer) -->
         {% include_relative common/bottom.html %}

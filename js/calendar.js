@@ -69,14 +69,35 @@ $(document).ready(function() {
                     checkbox: checkbox,
                     calendar: element.id
                 });
-                
+
                 // add elements
-                $(`<tr><td>`).appendTo(calendarSelection);
-                $(calendarSelection).append(checkbox);
-                $(`</td><td>${element.name}</td>`).appendTo(calendarSelection);
-                $(`<td><a href="${googleUrl}">Add to Google Calendar</a></td>`).appendTo(calendarSelection);
-                $(`<td><a href="#" id="ical${i}">Copy iCal link</a></td>`).appendTo(calendarSelection);
-                $(`</tr>`).appendTo(calendarSelection);
+                const row = $("<tr>");
+
+                const checkboxCell = $("<td>");
+                checkboxCell.append(checkbox);
+                row.append(checkboxCell);
+
+                const nameCell = $("<td>").text(element.name);
+                row.append(nameCell);
+
+                const googleCell = $("<td>");
+                $("<a>")
+                    .attr("href", googleUrl)
+                    .text("Add to Google Calendar")
+                    .appendTo(googleCell);
+                row.append(googleCell);
+
+                const icalCell = $("<td>");
+                $("<a>")
+                    .attr({
+                        href: "#",
+                        id: `ical${i}`
+                    })
+                    .text("Copy iCal link")
+                    .appendTo(icalCell);
+                row.append(icalCell);
+
+                $(calendarSelection).append(row);
 
                 // setup click action to copy iCalendar link 
                 $(`#ical${i}`).click(() => {

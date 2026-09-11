@@ -364,14 +364,12 @@ html.transition *:after {
 }
 
 #middle {
-    position: absolute !important;
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    margin: 100px auto 60px auto;
     max-width: 100% !important;
-    max-height: 60% !important;
-    top: 50% !important;
-    transform: translateY(-40%) !important;
-    overflow: hidden !important;
-    overflow-y: auto !important;
-    /* border: 1px solid yellow; */
+    overflow: visible !important;
 }
 
 #welcome {
