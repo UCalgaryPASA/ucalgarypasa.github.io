@@ -1,0 +1,98 @@
+---
+# This tells Jekyll to compile tags
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    {% include_relative common/head.html %}
+    
+    <link rel="stylesheet" href="/css/resources.css">
+</head>
+
+<body>
+
+    <div class="master container">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <!-- Top Row with Uni Logo and Night Mode (Header) -->
+        {% include_relative common/top.html %}
+
+        <div id="horiline hide">
+        </div>
+
+        <!-- Middle row (Main Content) -->
+        <main class="faq">
+            <div class="updatecontent content container">
+            <div class="row outline justify-content-center align-items-center">
+                <div class="col-12 outline">
+                    <div class="contentHeader outline">
+                        <!-- Don't forget funny comment to help with spacing -->
+                        <span class="typed">Room Change FAQ</span>
+                    </div>
+                </div>
+
+                <!-- <div class="stuff col-12 col-md-6 outline"> -->
+
+                <div class="row outline justify-content-center align-items-center">
+                    <div class="stuff textstuff col-12 outline">
+                        <div class="innerStuff" id="content">
+                            <h3>Frequently Asked Questions</h3>
+                            <hr>
+                            <br>
+
+                            <details> 
+                                <summary>Why is this happening?</summary> 
+                                    <div class="faq-answer"> 
+                                        <p> In short, the Faculty of Science has committed resources to creating a new club space for PASA and CSC after reviewing the quality of our current club rooms. </p> <p> Some of the particular issues they've cited include the lack of ventilation and university-approved furniture, as well as accessibility issues due to the basement location and the stairwell leading into PASA. 
+                                        </p> 
+                                    </div> 
+                                </details>
+                            <br>
+                            <details> 
+                                <summary>Why is the move so soon? Can’t we have the current room for the rest of the year and move in the summer?</summary> 
+                                    <div class="faq-answer"> 
+                                        <p> We hear you and we’ve asked to delay the move. While it won’t be possible to delay that far in the future, the Faculty of Science is considering extending the move date by possibly a few days or weeks. In the case that this extension is not granted, we will be in the new room by October 1st. </p> 
+                                    </div> 
+                            </details>
+                            <br>
+                            <details> 
+                                <summary>Why wasn’t there any previous communication about this before in the summer?</summary> 
+                                    <div class="faq-answer"> 
+                                        <p> We learned about this new development in August and details about the move weren't confirmed until just before September. We will keep everyone updated as we get more information.  </p>                                    </div> 
+                            </details>
+                            <br>
+                            <details> 
+                                <summary>What’s the deal with being roommates with the Chemistry Students’ Chapter (CSC)? Are we going to be one club?</summary> 
+                                    <div class="faq-answer"> 
+                                        <p>PASA and the CSC will be working together to maintain the club room, but we will remain distinct clubs. Unfortunately, room space is a hot commodity at the university, and the Faculty of Science, PHAS, and Chemistry departments weren’t able to provide any additional club spaces. </p>
+                                    </div> 
+                            </details>
+                            <br>
+                            <details> 
+                                <summary>What happens to our amenities? (Vending machine, Fridge, Microwave)</summary> 
+                                    <div class="faq-answer"> 
+                                        <p> Good news, WE’RE KEEPING THE VENDING MACHINE. Bad news, all the other amenities are a bit up in the air. The exec team is working towards getting these in place. </p>  
+                            </details>
+                            <br>
+                            <details> 
+                                <summary>What happens to cubbies, will Cubby Brawl still happen?</summary> 
+                                    <div class="faq-answer"> 
+                                        <p> Yes! Cubby Brawl will still happen. While we aren’t able to move over the old cubby furniture, there will be some sort of cubby arrangement mirroring our old system </p>
+                            </details>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom container (Footer) -->
+        {% include_relative common/bottom.html %}
+    </div>
+
+</body>
+
+</html>
