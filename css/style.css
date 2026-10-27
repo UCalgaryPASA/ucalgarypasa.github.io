@@ -100,6 +100,7 @@ body {
     max-height: 100vh !important;
     height: 100vh !important;
     max-width: 100vw !important;
+    top:0;
 }
 
 .top-container {
@@ -348,6 +349,7 @@ html.transition *:after {
 
 #topBar {
     z-index: 999 !important;
+    top: 0;
 }
 
 #dropdown {
@@ -361,6 +363,10 @@ html.transition *:after {
 
 #navLinks a:hover {
     color: var(--text) !important;
+}
+
+#updatecontent {
+    display: flow-root;
 }
 
 #middle {
